@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		77222D721DD406E000B29165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222D711DD406E000B29165 /* AppDelegate.swift */; };
+		77222D741DD406E000B29165 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222D731DD406E000B29165 /* ViewController.swift */; };
+		77222D771DD406E000B29165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77222D751DD406E000B29165 /* Main.storyboard */; };
+		77222D791DD406E000B29165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77222D781DD406E000B29165 /* Assets.xcassets */; };
+		77222D7C1DD406E000B29165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77222D7A1DD406E000B29165 /* LaunchScreen.storyboard */; };
+		E29DB6FA40EE99DA7E11FDA6 /* Pods_SinaSwiftPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12B6F72F1B2BDC0CB94C67E5 /* Pods-SinaSwiftPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaSwiftPractice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice.debug.xcconfig"; sourceTree = "<group>"; };
+		77222D6E1DD406E000B29165 /* SinaSwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaSwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77222D711DD406E000B29165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		77222D731DD406E000B29165 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77222D761DD406E000B29165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		77222D781DD406E000B29165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77222D7B1DD406E000B29165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		77222D7D1DD406E000B29165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaSwiftPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E94674E99D48EF399B462D31 /* Pods-SinaSwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaSwiftPractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77222D6B1DD406E000B29165 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29DB6FA40EE99DA7E11FDA6 /* Pods_SinaSwiftPractice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		094A581A0B84D70E0E1E8044 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12B6F72F1B2BDC0CB94C67E5 /* Pods-SinaSwiftPractice.debug.xcconfig */,
+				E94674E99D48EF399B462D31 /* Pods-SinaSwiftPractice.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		77222D651DD406E000B29165 = {
+			isa = PBXGroup;
+			children = (
+				77222D701DD406E000B29165 /* SinaSwiftPractice */,
+				77222D6F1DD406E000B29165 /* Products */,
+				094A581A0B84D70E0E1E8044 /* Pods */,
+				E36C8EFA0B5ADCBBDBFC8EE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		77222D6F1DD406E000B29165 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77222D6E1DD406E000B29165 /* SinaSwiftPractice.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77222D701DD406E000B29165 /* SinaSwiftPractice */ = {
+			isa = PBXGroup;
+			children = (
+				77222D711DD406E000B29165 /* AppDelegate.swift */,
+				77222D731DD406E000B29165 /* ViewController.swift */,
+				77222D751DD406E000B29165 /* Main.storyboard */,
+				77222D781DD406E000B29165 /* Assets.xcassets */,
+				77222D7A1DD406E000B29165 /* LaunchScreen.storyboard */,
+				77222D7D1DD406E000B29165 /* Info.plist */,
+			);
+			path = SinaSwiftPractice;
+			sourceTree = "<group>";
+		};
+		E36C8EFA0B5ADCBBDBFC8EE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		77222D6D1DD406E000B29165 /* SinaSwiftPractice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77222D801DD406E000B29165 /* Build configuration list for PBXNativeTarget "SinaSwiftPractice" */;
+			buildPhases = (
+				93D7CB5D8E89FA0BE39918F3 /* [CP] Check Pods Manifest.lock */,
+				77222D6A1DD406E000B29165 /* Sources */,
+				77222D6B1DD406E000B29165 /* Frameworks */,
+				77222D6C1DD406E000B29165 /* Resources */,
+				2BEDDDBF3FAF6AE2B0AD7249 /* [CP] Embed Pods Frameworks */,
+				75597FBCBE995C0FAEEBBC1A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SinaSwiftPractice;
+			productName = SinaSwiftPractice;
+			productReference = 77222D6E1DD406E000B29165 /* SinaSwiftPractice.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		77222D661DD406E000B29165 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = maoge;
+				TargetAttributes = {
+					77222D6D1DD406E000B29165 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 77222D691DD406E000B29165 /* Build configuration list for PBXProject "SinaSwiftPractice" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 77222D651DD406E000B29165;
+			productRefGroup = 77222D6F1DD406E000B29165 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				77222D6D1DD406E000B29165 /* SinaSwiftPractice */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77222D6C1DD406E000B29165 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77222D7C1DD406E000B29165 /* LaunchScreen.storyboard in Resources */,
+				77222D791DD406E000B29165 /* Assets.xcassets in Resources */,
+				77222D771DD406E000B29165 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BEDDDBF3FAF6AE2B0AD7249 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75597FBCBE995C0FAEEBBC1A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93D7CB5D8E89FA0BE39918F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77222D6A1DD406E000B29165 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77222D741DD406E000B29165 /* ViewController.swift in Sources */,
+				77222D721DD406E000B29165 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		77222D751DD406E000B29165 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77222D761DD406E000B29165 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		77222D7A1DD406E000B29165 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77222D7B1DD406E000B29165 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		77222D7E1DD406E000B29165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		77222D7F1DD406E000B29165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		77222D811DD406E000B29165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12B6F72F1B2BDC0CB94C67E5 /* Pods-SinaSwiftPractice.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SinaSwiftPractice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.SinaSwiftPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		77222D821DD406E000B29165 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E94674E99D48EF399B462D31 /* Pods-SinaSwiftPractice.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SinaSwiftPractice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.SinaSwiftPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77222D691DD406E000B29165 /* Build configuration list for PBXProject "SinaSwiftPractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77222D7E1DD406E000B29165 /* Debug */,
+				77222D7F1DD406E000B29165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77222D801DD406E000B29165 /* Build configuration list for PBXNativeTarget "SinaSwiftPractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77222D811DD406E000B29165 /* Debug */,
+				77222D821DD406E000B29165 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 77222D661DD406E000B29165 /* Project object */;
+}
