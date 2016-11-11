@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		77222D721DD406E000B29165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222D711DD406E000B29165 /* AppDelegate.swift */; };
-		77222D741DD406E000B29165 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222D731DD406E000B29165 /* ViewController.swift */; };
-		77222D771DD406E000B29165 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77222D751DD406E000B29165 /* Main.storyboard */; };
 		77222D791DD406E000B29165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77222D781DD406E000B29165 /* Assets.xcassets */; };
-		77222D7C1DD406E000B29165 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77222D7A1DD406E000B29165 /* LaunchScreen.storyboard */; };
+		77222DAE1DD4248600B29165 /* JQTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DAD1DD4248600B29165 /* JQTabBarController.swift */; };
+		77222DB41DD424D900B29165 /* JQMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB31DD424D900B29165 /* JQMessageController.swift */; };
+		77222DB61DD424EA00B29165 /* JQDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB51DD424EA00B29165 /* JQDiscoverController.swift */; };
+		77222DB81DD424FB00B29165 /* JQProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB71DD424FB00B29165 /* JQProfileController.swift */; };
+		77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB91DD4277200B29165 /* JQHomeController.swift */; };
 		E29DB6FA40EE99DA7E11FDA6 /* Pods_SinaSwiftPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,11 +21,13 @@
 		12B6F72F1B2BDC0CB94C67E5 /* Pods-SinaSwiftPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaSwiftPractice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		77222D6E1DD406E000B29165 /* SinaSwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaSwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77222D711DD406E000B29165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77222D731DD406E000B29165 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		77222D761DD406E000B29165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77222D781DD406E000B29165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		77222D7B1DD406E000B29165 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77222D7D1DD406E000B29165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77222DAD1DD4248600B29165 /* JQTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQTabBarController.swift; sourceTree = "<group>"; };
+		77222DB31DD424D900B29165 /* JQMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQMessageController.swift; sourceTree = "<group>"; };
+		77222DB51DD424EA00B29165 /* JQDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQDiscoverController.swift; sourceTree = "<group>"; };
+		77222DB71DD424FB00B29165 /* JQProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQProfileController.swift; sourceTree = "<group>"; };
+		77222DB91DD4277200B29165 /* JQHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQHomeController.swift; sourceTree = "<group>"; };
 		D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaSwiftPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94674E99D48EF399B462D31 /* Pods-SinaSwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaSwiftPractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,14 +74,184 @@
 		77222D701DD406E000B29165 /* SinaSwiftPractice */ = {
 			isa = PBXGroup;
 			children = (
+				77222D831DD40C3600B29165 /* Classes */,
 				77222D711DD406E000B29165 /* AppDelegate.swift */,
-				77222D731DD406E000B29165 /* ViewController.swift */,
-				77222D751DD406E000B29165 /* Main.storyboard */,
 				77222D781DD406E000B29165 /* Assets.xcassets */,
-				77222D7A1DD406E000B29165 /* LaunchScreen.storyboard */,
 				77222D7D1DD406E000B29165 /* Info.plist */,
 			);
 			path = SinaSwiftPractice;
+			sourceTree = "<group>";
+		};
+		77222D831DD40C3600B29165 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				77222D871DD40C3600B29165 /* View */,
+				77222D841DD40C3600B29165 /* Model */,
+				77222D971DD40C3600B29165 /* ViewModel */,
+				77222D861DD40C3600B29165 /* Tools */,
+				77222D851DD40C3600B29165 /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		77222D841DD40C3600B29165 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		77222D851DD40C3600B29165 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		77222D861DD40C3600B29165 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		77222D871DD40C3600B29165 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77222D8E1DD40C3600B29165 /* Main */,
+				77222D8B1DD40C3600B29165 /* Home */,
+				77222D911DD40C3600B29165 /* Message */,
+				77222D881DD40C3600B29165 /* Discover */,
+				77222D941DD40C3600B29165 /* Profile */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77222D881DD40C3600B29165 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				77222D891DD40C3600B29165 /* Controller */,
+				77222D8A1DD40C3600B29165 /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		77222D891DD40C3600B29165 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77222DB51DD424EA00B29165 /* JQDiscoverController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		77222D8A1DD40C3600B29165 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77222D8B1DD40C3600B29165 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				77222D8C1DD40C3600B29165 /* Controller */,
+				77222D8D1DD40C3600B29165 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		77222D8C1DD40C3600B29165 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77222DB91DD4277200B29165 /* JQHomeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		77222D8D1DD40C3600B29165 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77222D8E1DD40C3600B29165 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				77222D8F1DD40C3600B29165 /* Controller */,
+				77222D901DD40C3600B29165 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		77222D8F1DD40C3600B29165 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77222DAD1DD4248600B29165 /* JQTabBarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		77222D901DD40C3600B29165 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77222D911DD40C3600B29165 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				77222D921DD40C3600B29165 /* Controller */,
+				77222D931DD40C3600B29165 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		77222D921DD40C3600B29165 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77222DB31DD424D900B29165 /* JQMessageController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		77222D931DD40C3600B29165 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77222D941DD40C3600B29165 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				77222D951DD40C3600B29165 /* Controller */,
+				77222D961DD40C3600B29165 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		77222D951DD40C3600B29165 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77222DB71DD424FB00B29165 /* JQProfileController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		77222D961DD40C3600B29165 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77222D971DD40C3600B29165 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E36C8EFA0B5ADCBBDBFC8EE0 /* Frameworks */ = {
@@ -117,6 +291,7 @@
 		77222D661DD406E000B29165 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JQ;
 				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = maoge;
@@ -150,9 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77222D7C1DD406E000B29165 /* LaunchScreen.storyboard in Resources */,
 				77222D791DD406E000B29165 /* Assets.xcassets in Resources */,
-				77222D771DD406E000B29165 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -211,31 +384,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77222D741DD406E000B29165 /* ViewController.swift in Sources */,
+				77222DB41DD424D900B29165 /* JQMessageController.swift in Sources */,
+				77222DB61DD424EA00B29165 /* JQDiscoverController.swift in Sources */,
+				77222DB81DD424FB00B29165 /* JQProfileController.swift in Sources */,
+				77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */,
+				77222DAE1DD4248600B29165 /* JQTabBarController.swift in Sources */,
 				77222D721DD406E000B29165 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		77222D751DD406E000B29165 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77222D761DD406E000B29165 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		77222D7A1DD406E000B29165 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77222D7B1DD406E000B29165 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		77222D7E1DD406E000B29165 /* Debug */ = {
@@ -334,7 +492,9 @@
 			baseConfigurationReference = 12B6F72F1B2BDC0CB94C67E5 /* Pods-SinaSwiftPractice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SinaSwiftPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.SinaSwiftPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -347,7 +507,9 @@
 			baseConfigurationReference = E94674E99D48EF399B462D31 /* Pods-SinaSwiftPractice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SinaSwiftPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iOS.SinaSwiftPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -374,6 +536,7 @@
 				77222D821DD406E000B29165 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

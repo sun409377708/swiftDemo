@@ -6,6 +6,5 @@ target 'SinaSwiftPractice' do
   use_frameworks!
 
   # Pods for SinaSwiftPractice
-
-pod ’SnapKit’
+pod 'SnapKit’, ‘~>3.0.2’
 end
