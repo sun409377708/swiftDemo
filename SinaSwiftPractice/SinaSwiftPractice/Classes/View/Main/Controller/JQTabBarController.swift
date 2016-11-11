@@ -15,6 +15,21 @@ class JQTabBarController: UITabBarController {
         
         tabBar.tintColor = UIColor.orange
 
+        //添加控制器
+        addController()
+        
+        //自定义tabBar
+        let tabbar = JQMainTabBar()
+        
+        tabbar.composeClosure = {[weak self] in
+            print("按钮被dianji")
+        }
+        
+        //KVC赋值
+        self.setValue(tabbar, forKey: "tabBar")
+    }
+    
+    func addController() {
         var tempArrM = [UIViewController]()
         
         tempArrM.append(self.addControllers(clsName: "JQHomeController", title: "首页", imageName: "tabbar_home"))
@@ -41,6 +56,7 @@ class JQTabBarController: UITabBarController {
         
         //设置偏移
         vc.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
+        vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orange], for: .selected)
         
         let nav = UINavigationController(rootViewController: vc)
         
