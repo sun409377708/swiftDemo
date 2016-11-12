@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		770010781DD607D5004281C9 /* JQMainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770010771DD607D5004281C9 /* JQMainTabBar.swift */; };
+		7700107C1DD621AB004281C9 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7700107B1DD621AB004281C9 /* SearchView.xib */; };
+		7700107E1DD622CC004281C9 /* JQSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7700107D1DD622CC004281C9 /* JQSearchView.swift */; };
+		770010811DD6B3D9004281C9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770010801DD6B3D9004281C9 /* UIView+Extension.swift */; };
 		77222D721DD406E000B29165 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222D711DD406E000B29165 /* AppDelegate.swift */; };
 		77222D791DD406E000B29165 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77222D781DD406E000B29165 /* Assets.xcassets */; };
 		77222DAE1DD4248600B29165 /* JQTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DAD1DD4248600B29165 /* JQTabBarController.swift */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		12B6F72F1B2BDC0CB94C67E5 /* Pods-SinaSwiftPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaSwiftPractice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		770010771DD607D5004281C9 /* JQMainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQMainTabBar.swift; sourceTree = "<group>"; };
+		7700107B1DD621AB004281C9 /* SearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		7700107D1DD622CC004281C9 /* JQSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQSearchView.swift; sourceTree = "<group>"; };
+		770010801DD6B3D9004281C9 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		77222D6E1DD406E000B29165 /* SinaSwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaSwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77222D711DD406E000B29165 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77222D781DD406E000B29165 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +59,14 @@
 				E94674E99D48EF399B462D31 /* Pods-SinaSwiftPractice.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7700107F1DD6B3B2004281C9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				770010801DD6B3D9004281C9 /* UIView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		77222D651DD406E000B29165 = {
@@ -113,6 +127,7 @@
 		77222D861DD40C3600B29165 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7700107F1DD6B3B2004281C9 /* Extension */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -149,6 +164,8 @@
 		77222D8A1DD40C3600B29165 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7700107B1DD621AB004281C9 /* SearchView.xib */,
+				7700107D1DD622CC004281C9 /* JQSearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7700107C1DD621AB004281C9 /* SearchView.xib in Resources */,
 				77222D791DD406E000B29165 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,7 +406,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				77222DB41DD424D900B29165 /* JQMessageController.swift in Sources */,
+				7700107E1DD622CC004281C9 /* JQSearchView.swift in Sources */,
 				77222DB61DD424EA00B29165 /* JQDiscoverController.swift in Sources */,
+				770010811DD6B3D9004281C9 /* UIView+Extension.swift in Sources */,
 				77222DB81DD424FB00B29165 /* JQProfileController.swift in Sources */,
 				77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */,
 				77222DAE1DD4248600B29165 /* JQTabBarController.swift in Sources */,
