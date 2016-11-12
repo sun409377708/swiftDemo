@@ -14,9 +14,6 @@ class JQTabBarController: UITabBarController {
         super.viewDidLoad()
         
         tabBar.tintColor = UIColor.orange
-
-        //添加控制器
-        addController()
         
         //自定义tabBar
         let tabbar = JQMainTabBar()
@@ -27,6 +24,9 @@ class JQTabBarController: UITabBarController {
         
         //KVC赋值
         self.setValue(tabbar, forKey: "tabBar")
+        
+        //添加控制器 - 如果在自定义TabBar之前操作, 就没有默认第一个选择  
+        addController()
     }
     
     func addController() {

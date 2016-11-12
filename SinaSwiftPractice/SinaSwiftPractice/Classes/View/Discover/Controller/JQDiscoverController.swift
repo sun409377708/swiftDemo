@@ -13,7 +13,10 @@ class JQDiscoverController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.titleView = JQSearchView.loadSearchView()
+//        self.navigationItem.titleView = JQSearchView.loadSearchView()
+        
+        self.navigationItem.titleView = JQSearchTextView.loadSearchText()
+
     }
 
     override func didReceiveMemoryWarning() {
