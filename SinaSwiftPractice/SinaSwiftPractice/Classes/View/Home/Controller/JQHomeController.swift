@@ -13,12 +13,16 @@ class JQHomeController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.red
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        view.backgroundColor = UIColor.white
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(push))
+    }
+    
+    @objc private func push() {
+        
+        let tempVC = JQTempController()
+                
+        navigationController?.pushViewController(tempVC, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

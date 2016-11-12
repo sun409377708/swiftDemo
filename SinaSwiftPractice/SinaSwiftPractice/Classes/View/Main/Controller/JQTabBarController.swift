@@ -58,7 +58,7 @@ class JQTabBarController: UITabBarController {
         vc.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
         vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orange], for: .selected)
         
-        let nav = UINavigationController(rootViewController: vc)
+        let nav = JQMainNavController(rootViewController: vc)
         
         return nav
     }
