@@ -8,14 +8,15 @@
 
 import UIKit
 
-class JQHomeController: UITableViewController {
+class JQHomeController: JQBaseTableController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.white
-
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(push))
+        
+        visitorView.updateInfo(tipText: "苦涩的痛吹通脸胖的感觉, 永远难忘记, 年少的我稀罕一个人在海关", imageName: nil)
     }
     
     @objc private func push() {

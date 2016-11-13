@@ -9,10 +9,13 @@
 
 import UIKit
 
-class JQProfileController: UITableViewController {
+class JQProfileController: JQBaseTableController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        visitorView.updateInfo(tipText: "登录后，你的微博、相册、个人资料会显示在这里，展示给别人", imageName: "visitordiscover_image_profile")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

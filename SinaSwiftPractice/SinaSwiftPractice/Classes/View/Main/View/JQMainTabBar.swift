@@ -57,7 +57,6 @@ class JQMainTabBar: UITabBar {
         composeBtn.bounds.size = CGSize(width: w, height: h)
         composeBtn.center = CGPoint(x: self.center.x, y: self.bounds.height * 0.5)
         
-        print(composeBtn.frame)
     }
     
     //实例化中间按钮

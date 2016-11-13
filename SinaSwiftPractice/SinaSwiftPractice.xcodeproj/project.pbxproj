@@ -23,6 +23,10 @@
 		77222DB61DD424EA00B29165 /* JQDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB51DD424EA00B29165 /* JQDiscoverController.swift */; };
 		77222DB81DD424FB00B29165 /* JQProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB71DD424FB00B29165 /* JQProfileController.swift */; };
 		77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB91DD4277200B29165 /* JQHomeController.swift */; };
+		775A71611DD80744007B8626 /* JQBaseTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71601DD80743007B8626 /* JQBaseTableController.swift */; };
+		775A71631DD80D84007B8626 /* JQVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71621DD80D84007B8626 /* JQVisitorView.swift */; };
+		775A71651DD80FFB007B8626 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71641DD80FFB007B8626 /* UILabel+Extension.swift */; };
+		775A71671DD81154007B8626 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71661DD81154007B8626 /* UIButton+Extension.swift */; };
 		E29DB6FA40EE99DA7E11FDA6 /* Pods_SinaSwiftPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,10 @@
 		77222DB51DD424EA00B29165 /* JQDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQDiscoverController.swift; sourceTree = "<group>"; };
 		77222DB71DD424FB00B29165 /* JQProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQProfileController.swift; sourceTree = "<group>"; };
 		77222DB91DD4277200B29165 /* JQHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQHomeController.swift; sourceTree = "<group>"; };
+		775A71601DD80743007B8626 /* JQBaseTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQBaseTableController.swift; sourceTree = "<group>"; };
+		775A71621DD80D84007B8626 /* JQVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQVisitorView.swift; sourceTree = "<group>"; };
+		775A71641DD80FFB007B8626 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		775A71661DD81154007B8626 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaSwiftPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94674E99D48EF399B462D31 /* Pods-SinaSwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaSwiftPractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +84,8 @@
 			children = (
 				770010801DD6B3D9004281C9 /* UIView+Extension.swift */,
 				770010841DD6B8F9004281C9 /* UIBarButtonItem+Extension.swift */,
+				775A71641DD80FFB007B8626 /* UILabel+Extension.swift */,
+				775A71661DD81154007B8626 /* UIButton+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -222,6 +232,7 @@
 			children = (
 				77222DAD1DD4248600B29165 /* JQTabBarController.swift */,
 				770010861DD6BF66004281C9 /* JQMainNavController.swift */,
+				775A71601DD80743007B8626 /* JQBaseTableController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				770010771DD607D5004281C9 /* JQMainTabBar.swift */,
+				775A71621DD80D84007B8626 /* JQVisitorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -424,14 +436,18 @@
 				770010831DD6B74D004281C9 /* JQTempController.swift in Sources */,
 				77222DB41DD424D900B29165 /* JQMessageController.swift in Sources */,
 				7700107E1DD622CC004281C9 /* JQSearchView.swift in Sources */,
+				775A71671DD81154007B8626 /* UIButton+Extension.swift in Sources */,
 				77222DB61DD424EA00B29165 /* JQDiscoverController.swift in Sources */,
 				770010811DD6B3D9004281C9 /* UIView+Extension.swift in Sources */,
 				770010871DD6BF66004281C9 /* JQMainNavController.swift in Sources */,
 				770010851DD6B8F9004281C9 /* UIBarButtonItem+Extension.swift in Sources */,
 				77222DB81DD424FB00B29165 /* JQProfileController.swift in Sources */,
+				775A71651DD80FFB007B8626 /* UILabel+Extension.swift in Sources */,
+				775A71611DD80744007B8626 /* JQBaseTableController.swift in Sources */,
 				77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */,
 				770010A61DD6F855004281C9 /* JQSearchTextView.swift in Sources */,
 				77222DAE1DD4248600B29165 /* JQTabBarController.swift in Sources */,
+				775A71631DD80D84007B8626 /* JQVisitorView.swift in Sources */,
 				770010781DD607D5004281C9 /* JQMainTabBar.swift in Sources */,
 				77222D721DD406E000B29165 /* AppDelegate.swift in Sources */,
 			);

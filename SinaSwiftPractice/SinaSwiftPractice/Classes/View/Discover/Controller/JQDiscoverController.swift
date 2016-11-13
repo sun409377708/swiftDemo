@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JQDiscoverController: UITableViewController {
+class JQDiscoverController: JQBaseTableController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +16,8 @@ class JQDiscoverController: UITableViewController {
 //        self.navigationItem.titleView = JQSearchView.loadSearchView()
         
         self.navigationItem.titleView = JQSearchTextView.loadSearchText()
+
+        visitorView.updateInfo(tipText: "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知", imageName: "visitordiscover_image_message")
 
     }
 
