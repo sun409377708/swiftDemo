@@ -9,7 +9,19 @@
 import UIKit
 import SnapKit
 
+@objc protocol JQVisitorViewDelegate: NSObjectProtocol {
+    
+    //登陆
+    func userWillLogin()
+    
+    //注册
+    @objc optional func userWillRegister()
+}
+
 class JQVisitorView: UIView {
+    
+    //声明代理属性
+    weak var delegate:JQVisitorViewDelegate?
 
     //定义一个方法, 给外界设置信息
     func updateInfo(tipText: String, imageName: String?) {
@@ -21,8 +33,21 @@ class JQVisitorView: UIView {
             iconView.isHidden = true
             backView.isHidden = true
         }else {
-            //首页
+            //首页 执行动画
+            startAnimation()
         }
+    }
+    
+    private func startAnimation() {
+        
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        
+        anim.repeatCount = MAXFLOAT
+        anim.toValue = 2 * M_PI
+        anim.duration = 10
+        
+        anim.isRemovedOnCompletion = false
+        circleView.layer .add(anim, forKey: nil)
     }
     
     override init(frame: CGRect) {
@@ -70,19 +95,33 @@ class JQVisitorView: UIView {
             make.width.equalTo(100)
         }
     
+        //实现按钮监听方法
+        loginBtn.addTarget(self, action: #selector(userLogin), for: .touchUpInside)
         
+        registerBtn.addTarget(self, action: #selector(userRegister), for: .touchUpInside)
+    }
+    
+    //MARK: - 实现按钮点击方法
+    @objc func userLogin() {
+        
+        delegate?.userWillLogin()
+    }
+    
+    @objc func userRegister() {
+    
+        delegate?.userWillRegister?()
     }
     
     
     //MARK: - 懒加载控件
-    lazy var circleView: UIImageView = UIImageView(image: #imageLiteral(resourceName: "visitordiscover_feed_image_smallicon"))
+    private lazy var circleView: UIImageView = UIImageView(image: #imageLiteral(resourceName: "visitordiscover_feed_image_smallicon"))
     
-    lazy var iconView: UIImageView = UIImageView(image: #imageLiteral(resourceName: "visitordiscover_feed_image_house"))
+    private lazy var iconView: UIImageView = UIImageView(image: #imageLiteral(resourceName: "visitordiscover_feed_image_house"))
     
-    lazy var backView: UIImageView = UIImageView(image: #imageLiteral(resourceName: "visitordiscover_feed_mask_smallicon"))
+    private lazy var backView: UIImageView = UIImageView(image: #imageLiteral(resourceName: "visitordiscover_feed_mask_smallicon"))
     
     //提示文字
-    lazy var tipLabel: UILabel = {
+    private lazy var tipLabel: UILabel = {
         
         let l = UILabel(title: "宁静的夏天, 天空繁星点点,心里头有写思念, 思念着你的脸", textColor: UIColor.darkGray, fontSize: 14)
         l.numberOfLines = 0
@@ -91,7 +130,7 @@ class JQVisitorView: UIView {
     }()
     
     //注册按钮
-    lazy var registerBtn: UIButton = {
+    private lazy var registerBtn: UIButton = {
         
         let btn = UIButton(title: "注册", textColor: UIColor.orange, fontSize: 14)
         //背景
@@ -102,10 +141,10 @@ class JQVisitorView: UIView {
     
     
     //登陆按钮
-    lazy var loginBtn: UIButton = {
+    private lazy var loginBtn: UIButton = {
         
         let btn = UIButton(title: "登陆", textColor: UIColor.darkGray, fontSize: 14)
-        //背景
+        //背景        
         btn.setBackgroundImage(#imageLiteral(resourceName: "common_button_white"), for: .normal)
         
         return btn

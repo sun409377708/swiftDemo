@@ -12,7 +12,7 @@ import UIKit
 extension UIBarButtonItem {
     
     
-    convenience init(title: String = "", imageName: String, target: Any?, action: Selector) {
+    convenience init(title: String = "", imageName: String? = nil, target: Any?, action: Selector) {
      
         let btn = UIButton()
         
@@ -21,8 +21,10 @@ extension UIBarButtonItem {
         btn.setTitleColor(UIColor.orange, for: .highlighted)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         
-        btn.setImage(UIImage(named: imageName), for: .normal)
-        btn.setImage(UIImage(named: imageName + "_highlighted"), for: .highlighted)
+        if imageName != nil {
+            btn.setImage(UIImage(named: imageName!), for: .normal)
+            btn.setImage(UIImage(named: imageName! + "_highlighted"), for: .highlighted)
+        }
 
         btn.sizeToFit()
         

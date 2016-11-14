@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JQBaseTableController: UITableViewController {
+class JQBaseTableController: UITableViewController, JQVisitorViewDelegate {
 
     var userLogin:Bool = false
     //访客视图
@@ -30,8 +30,25 @@ class JQBaseTableController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        visitorView.delegate = self
         
     }
+    
+    //MARK: - 实现代理方法
+    func userWillLogin() {
+        print("denglu")
+        
+        let oauthVC = JQOAuthController()
+        
+        let nav = UINavigationController(rootViewController: oauthVC)
+        
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    func userWillRegister() {
+        print("zhuce")
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
