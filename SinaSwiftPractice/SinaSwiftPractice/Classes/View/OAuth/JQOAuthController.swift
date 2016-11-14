@@ -105,11 +105,68 @@ extension JQOAuthController: UIWebViewDelegate {
             
             let code = (query as NSString).substring(from: flag.characters.count)
             
-            print(code)
+            self.loadAccessToken(code: code)
             
             return false
         }
         
         return true
+    }
+    
+    //获取token
+    func loadAccessToken(code: String) {
+        
+        let urlString = "https://api.weibo.com/oauth2/access_token"
+        
+        let params = ["client_id" : client_id,
+                      "client_secret" : client_secret,
+                      "grant_type" : "",
+                      "code" : code,
+                      "redirect_uri" : redirect_uri]
+        
+        JQNetworkTools.sharedTools.request(method: .POST, urlString: urlString, parameter: params) { (responseObject, error) in
+            
+            if error != nil {
+                
+                return
+            }
+            
+            guard let dict = responseObject as? [String : Any] else {
+                return
+            }
+            
+            self.loadUserInfo(dict: dict)
+        }
+    }
+    
+    //加载用户信息
+    func loadUserInfo(dict: [String : Any]) {
+        
+        guard let access_token = dict["access_token"], let uid = dict["uid"] else {
+            return
+        }
+        
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        
+        let params = ["access_token" : access_token,
+                      "uid" : uid]
+        
+        JQNetworkTools.sharedTools.request(method: .GET, urlString: urlString, parameter: params) { (responseObject, error) in
+            
+            if error != nil {
+                return
+            }
+            
+            var userInfo = responseObject as! [String : Any]
+            
+            for keyValues in dict {
+                userInfo[keyValues.key] = keyValues.value
+            }
+            
+            //字典转模型
+            let account = JQUserAccount(dict : userInfo)
+            
+            print(account)
+        }
     }
 }
