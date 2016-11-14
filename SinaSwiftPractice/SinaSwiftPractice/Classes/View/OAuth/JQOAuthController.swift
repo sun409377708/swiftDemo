@@ -11,7 +11,9 @@ import SVProgressHUD
 
 class JQOAuthController: UIViewController {
 
-    private lazy var webView: UIWebView = {
+    lazy var progressView = ProgressView()
+    
+    lazy var webView: UIWebView = {
         
         let v = UIWebView()
         
@@ -36,6 +38,16 @@ class JQOAuthController: UIViewController {
         
         //加载网络
         loadAuthPage()
+        
+        //添加加载条
+        addProgressView()
+    }
+    
+    func addProgressView() {
+        
+        view.addSubview(progressView)
+        
+        progressView.frame.origin.y = 64
     }
     
     private func loadAuthPage() {
@@ -70,11 +82,15 @@ class JQOAuthController: UIViewController {
 extension JQOAuthController: UIWebViewDelegate {
     
     func webViewDidStartLoad(_ webView: UIWebView) {
-        SVProgressHUD.show()
+//        SVProgressHUD.show()
+        
+        progressView.startAnimation()
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        SVProgressHUD.dismiss()
+//        SVProgressHUD.dismiss()
+        
+        progressView.endAnimation()
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
