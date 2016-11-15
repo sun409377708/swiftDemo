@@ -121,6 +121,9 @@ extension JQOAuthController: UIWebViewDelegate {
                 
                 //用户登录成功, 跳转控制器
                 print("登录成功")
+                let welcomeVC = JQWelcomeController()
+                
+                self.present(welcomeVC, animated: true, completion: nil)
             })
             
             return false

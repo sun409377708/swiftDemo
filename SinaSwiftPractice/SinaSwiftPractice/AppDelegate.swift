@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let mainTab = JQTabBarController()
+//        let mainTab = JQTabBarController()
+        let mainTab = JQWelcomeController()
         
         window?.rootViewController = mainTab
         
