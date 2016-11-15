@@ -16,7 +16,7 @@ class JQBaseTableController: UITableViewController, JQVisitorViewDelegate {
     
     override func loadView() {
         
-        if userLogin {
+        if JQUserAccountViewModel.sharedModel.userLogin {
             //已经登陆
             super.loadView()
             

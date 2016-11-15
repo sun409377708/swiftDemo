@@ -53,8 +53,6 @@ class JQUserAccount: NSObject, NSCoding {
         expiresDate = aDecoder.decodeObject(forKey: "expiresDate") as? Date
     }
     
-  
-    
 }
 
 extension JQUserAccount {
