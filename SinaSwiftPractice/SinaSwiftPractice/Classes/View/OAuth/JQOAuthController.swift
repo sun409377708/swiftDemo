@@ -166,7 +166,17 @@ extension JQOAuthController: UIWebViewDelegate {
             //字典转模型
             let account = JQUserAccount(dict : userInfo)
             
-            print(account)
+            //保存沙盒
+            self.saveUserAccount(userAccount: account)
         }
+    }
+    
+    
+    
+    private func saveUserAccount(userAccount : JQUserAccount) {
+        
+        let path = ("account.plist" as NSString).jq_appendDocumentDir()
+        
+        NSKeyedArchiver.archiveRootObject(userAccount, toFile: path)
     }
 }

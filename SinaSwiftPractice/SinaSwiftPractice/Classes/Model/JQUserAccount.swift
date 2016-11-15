@@ -8,12 +8,16 @@
 
 import UIKit
 
-class JQUserAccount: NSObject {
+class JQUserAccount: NSObject, NSCoding {
     
     /// 访问令牌
     var access_token: String?
     /// 生命周期，多少秒之后就accessToken就不能使用了
-    var expires_in: Int = 0
+    var expires_in: Int = 0 {
+        didSet {
+            expiresDate = Date(timeIntervalSinceNow: TimeInterval(expires_in))
+        }
+    }
     /// 当前用户的id
     var uid: String?
     /// 过期日期
@@ -32,4 +36,29 @@ class JQUserAccount: NSObject {
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         
     }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(access_token, forKey: "access_token")
+        aCoder.encode(uid, forKey: "uid")
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(profile_image_url, forKey: "profile_image_url")
+        aCoder.encode(expiresDate, forKey: "expiresDate")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        access_token = aDecoder.decodeObject(forKey: "access_token") as? String
+        uid = aDecoder.decodeObject(forKey: "uid") as? String
+        name = aDecoder.decodeObject(forKey: "name") as? String
+        profile_image_url = aDecoder.decodeObject(forKey: "profile_image_url") as? String
+        expiresDate = aDecoder.decodeObject(forKey: "expiresDate") as? Date
+    }
+    
+  
+    
+}
+
+extension JQUserAccount {
+    
+   
+    
 }
