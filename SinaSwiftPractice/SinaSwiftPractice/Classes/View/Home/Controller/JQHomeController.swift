@@ -10,6 +10,8 @@ import UIKit
 import YYModel
 import SVProgressHUD
 
+private let cellId = "JQStatusCellid"
+
 class JQHomeController: JQBaseTableController {
     
     //微博数组
@@ -30,6 +32,9 @@ class JQHomeController: JQBaseTableController {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         
         
+        //设置tableView
+        setTableView()
+        
         //加载数据
         homeViewModel.loadData { (success) in
             if !success {
@@ -40,7 +45,16 @@ class JQHomeController: JQBaseTableController {
             
             self.tableView.reloadData()
         }
-  
+    }
+    
+    // MARK: - 设置tableView
+    private func setTableView() {
+        
+        let nib = UINib.init(nibName: "JQStatusCell", bundle: nil)
+        
+        tableView.register(nib, forCellReuseIdentifier: cellId)
+        
+        tableView.rowHeight = 300
     }
     
     @objc private func push() {
@@ -64,11 +78,11 @@ class JQHomeController: JQBaseTableController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! JQStatusCell
 
         let model = self.homeViewModel.viewmodelArray[indexPath.row]
         
-        cell.textLabel?.text = model.status?.text
+        cell.viewmodel = model
         
         return cell
     }
