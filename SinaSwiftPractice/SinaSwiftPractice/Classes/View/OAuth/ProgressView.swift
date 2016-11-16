@@ -30,10 +30,10 @@ class ProgressView: UIView {
         
         UIView.animate(withDuration: 0.3, animations: {
             
-            self.frame.size.width = screenSize.width * 0.6
+            self.frame.size.width = ScreenWidth * 0.6
         }) { (_) in
             UIView.animate(withDuration: 0.2, animations: {
-                self.frame.size.width = screenSize.width * 0.8
+                self.frame.size.width = ScreenWidth * 0.8
             })
         }
     }
@@ -42,7 +42,7 @@ class ProgressView: UIView {
         
         UIView.animate(withDuration: 0.3, animations: {
             
-            self.frame.size.width  = screenSize.width
+            self.frame.size.width  = ScreenWidth
             
         }) { (_) in
             

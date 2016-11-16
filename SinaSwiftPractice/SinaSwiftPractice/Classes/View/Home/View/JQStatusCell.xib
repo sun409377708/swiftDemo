@@ -102,11 +102,13 @@
             <connections>
                 <outlet property="avatarImage" destination="q9p-tq-QLj" id="hQO-eS-uMl"/>
                 <outlet property="contentLabel" destination="Eke-Ub-Mic" id="aqz-Ky-Ygu"/>
+                <outlet property="flowLayout" destination="CLh-OG-hT9" id="IM4-jm-Txk"/>
                 <outlet property="iconView" destination="V67-bt-UvI" id="WaW-il-lF5"/>
                 <outlet property="memberImage" destination="KLd-43-nTx" id="96e-9u-8Tw"/>
                 <outlet property="nameLabel" destination="pbS-dj-Iwg" id="etn-UO-dXX"/>
-                <outlet property="pictureViewHeightCons" destination="8Xz-1d-tgM" id="91b-Eg-w53"/>
-                <outlet property="pictureViewWidthCons" destination="r96-Sc-YKa" id="rRU-10-jve"/>
+                <outlet property="pictureView" destination="SqV-2D-2WG" id="hFI-7R-wyd"/>
+                <outlet property="pictureViewHeightCons" destination="r96-Sc-YKa" id="k1d-kX-M0w"/>
+                <outlet property="pictureViewWidthCons" destination="8Xz-1d-tgM" id="aym-Xe-KQ6"/>
                 <outlet property="sourceLabel" destination="Hyq-Vp-fEk" id="GeC-XG-SXC"/>
                 <outlet property="timeLabel" destination="w8g-hv-jbL" id="gzq-lS-onM"/>
             </connections>

@@ -11,6 +11,13 @@ import SDWebImage
 
 let commonMargin: CGFloat = 8
 
+//图片之间的间距
+private let pictureCellMargin: CGFloat = 3
+
+//计算图片的宽度
+private let maxWidth =  ScreenWidth - 2 * commonMargin
+private let itemWidth = (maxWidth - 2 * pictureCellMargin) / 3
+
 
 class JQStatusCell: UITableViewCell {
 
@@ -32,6 +39,10 @@ class JQStatusCell: UITableViewCell {
     
     @IBOutlet weak var pictureViewHeightCons: NSLayoutConstraint!
     
+    @IBOutlet weak var pictureView: JQPictureView!
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     var viewmodel: JQStatusViewModel? {
         didSet {
            
@@ -43,6 +54,15 @@ class JQStatusCell: UITableViewCell {
             sourceLabel.text = viewmodel?.status?.source
             contentLabel.text = viewmodel?.status?.text
             
+            //计算配图视图大小
+            let count = viewmodel?.status?.pic_urls?.count ?? 0
+            let size = changePictureViewSize(count: count)
+            
+            pictureViewWidthCons.constant = size.width
+            pictureViewHeightCons.constant = size.height
+            
+            //传递数据给配图视图
+            pictureView.pictureInfo = viewmodel?.status?.pic_urls
         }
     }
     
@@ -50,10 +70,36 @@ class JQStatusCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.backgroundColor = UIColor.randomColor()
+        selectionStyle = .none
+
+        contentLabel.preferredMaxLayoutWidth = ScreenWidth - 2 * commonMargin
         
-        contentLabel.preferredMaxLayoutWidth = screenSize.width - 2 * commonMargin
+        //设置配图视图流水布局
+        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        
+        flowLayout.minimumLineSpacing = pictureCellMargin
+        flowLayout.minimumInteritemSpacing = pictureCellMargin
     }
 
-    
+    private func changePictureViewSize(count: Int) -> CGSize {
+        
+        //0 图
+        if count == 0{
+            return CGSize.zero
+        }
+        
+        //4 图
+        if count == 4 {
+            
+            let width = 2 * itemWidth + pictureCellMargin
+            return CGSize(width: width, height: width)
+        }
+        
+        //其他图
+        let rowCount = CGFloat((count - 1) / 3 + 1)
+        
+        let height = rowCount * itemWidth + (rowCount - 1) * pictureCellMargin
+        
+        return CGSize(width: maxWidth, height: height)
+    }
 }
