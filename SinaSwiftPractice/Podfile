@@ -10,4 +10,5 @@ pod 'SnapKit’, ‘~>3.0.2’
 pod ‘AFNetworking’
 pod ’SVProgressHUD’
 pod ’SDWebImage’
+pod ‘YYModel’
 end

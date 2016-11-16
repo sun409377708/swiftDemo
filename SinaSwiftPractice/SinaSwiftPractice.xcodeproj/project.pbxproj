@@ -39,6 +39,7 @@
 		775A72671DDAA9BF007B8626 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A72631DDAA9BF007B8626 /* UIColor+Extension.swift */; };
 		775A72691DDAC430007B8626 /* JQUserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A72681DDAC430007B8626 /* JQUserAccountViewModel.swift */; };
 		775A726B1DDAFB77007B8626 /* JQWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A726A1DDAFB77007B8626 /* JQWelcomeController.swift */; };
+		77CA30851DDC0F2C003E13FC /* JQStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA30841DDC0F2C003E13FC /* JQStatus.swift */; };
 		E29DB6FA40EE99DA7E11FDA6 /* Pods_SinaSwiftPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		775A72631DDAA9BF007B8626 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		775A72681DDAC430007B8626 /* JQUserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JQUserAccountViewModel.swift; path = ../Model/JQUserAccountViewModel.swift; sourceTree = "<group>"; };
 		775A726A1DDAFB77007B8626 /* JQWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQWelcomeController.swift; sourceTree = "<group>"; };
+		77CA30841DDC0F2C003E13FC /* JQStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQStatus.swift; sourceTree = "<group>"; };
 		D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaSwiftPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94674E99D48EF399B462D31 /* Pods-SinaSwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaSwiftPractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				775A72561DDA1F08007B8626 /* JQUserAccount.swift */,
+				77CA30841DDC0F2C003E13FC /* JQStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */,
 				770010A61DD6F855004281C9 /* JQSearchTextView.swift in Sources */,
 				77222DAE1DD4248600B29165 /* JQTabBarController.swift in Sources */,
+				77CA30851DDC0F2C003E13FC /* JQStatus.swift in Sources */,
 				775A71631DD80D84007B8626 /* JQVisitorView.swift in Sources */,
 				770010781DD607D5004281C9 /* JQMainTabBar.swift in Sources */,
 				77222D721DD406E000B29165 /* AppDelegate.swift in Sources */,

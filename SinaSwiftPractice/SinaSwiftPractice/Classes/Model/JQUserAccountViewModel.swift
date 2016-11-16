@@ -15,6 +15,7 @@ class JQUserAccountViewModel: NSObject {
     
     var userAccount:JQUserAccount? {
         didSet {
+            //第一次加载页面时赋值头像
             let urlString = userAccount?.avatar_large ?? ""
             iconURL = URL(string: urlString)
         }
@@ -43,7 +44,7 @@ class JQUserAccountViewModel: NSObject {
         return true
     }
     
-    //头像图片地址
+    //头像图片地址 - 不建议用计算型属性, 因为会频繁调用, 消耗CPU
     var iconURL: URL?
     
     override init() {
@@ -51,7 +52,7 @@ class JQUserAccountViewModel: NSObject {
         
         //读取沙盒的值
         self.userAccount = loadUserAccount()
-        
+        //第二次登陆赋值头像
         let urlString = userAccount?.avatar_large ?? ""
         iconURL = URL(string: urlString)
     }

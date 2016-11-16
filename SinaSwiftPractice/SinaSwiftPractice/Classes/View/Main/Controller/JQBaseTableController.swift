@@ -10,7 +10,7 @@ import UIKit
 
 class JQBaseTableController: UITableViewController, JQVisitorViewDelegate {
 
-    var userLogin:Bool = false
+    var userLogin:Bool = JQUserAccountViewModel.sharedModel.userLogin
     //访客视图
     lazy var visitorView:JQVisitorView = JQVisitorView()
     
@@ -51,15 +51,15 @@ class JQBaseTableController: UITableViewController, JQVisitorViewDelegate {
     
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
 
 }
