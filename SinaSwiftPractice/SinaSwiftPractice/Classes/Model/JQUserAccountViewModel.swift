@@ -126,7 +126,6 @@ class JQUserAccountViewModel: NSObject {
             
             finished(true)
             
-            print(account)
         }
     }
     
@@ -140,7 +139,7 @@ class JQUserAccountViewModel: NSObject {
     //解档数据
     private func loadUserAccount() -> JQUserAccount?{
         let account = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? JQUserAccount
-        print(path)
+//        print(path)
         
         return account
     }

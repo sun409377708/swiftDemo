@@ -40,6 +40,10 @@
 		775A72691DDAC430007B8626 /* JQUserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A72681DDAC430007B8626 /* JQUserAccountViewModel.swift */; };
 		775A726B1DDAFB77007B8626 /* JQWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A726A1DDAFB77007B8626 /* JQWelcomeController.swift */; };
 		77CA30851DDC0F2C003E13FC /* JQStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA30841DDC0F2C003E13FC /* JQStatus.swift */; };
+		77CA30871DDC3483003E13FC /* JQStatusPictureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA30861DDC3483003E13FC /* JQStatusPictureInfo.swift */; };
+		77CA30891DDC34C3003E13FC /* JQUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA30881DDC34C3003E13FC /* JQUser.swift */; };
+		77CA308B1DDC3592003E13FC /* JQHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA308A1DDC3592003E13FC /* JQHomeViewModel.swift */; };
+		77CA308D1DDC3833003E13FC /* JQStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA308C1DDC3833003E13FC /* JQStatusViewModel.swift */; };
 		E29DB6FA40EE99DA7E11FDA6 /* Pods_SinaSwiftPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +85,10 @@
 		775A72681DDAC430007B8626 /* JQUserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JQUserAccountViewModel.swift; path = ../Model/JQUserAccountViewModel.swift; sourceTree = "<group>"; };
 		775A726A1DDAFB77007B8626 /* JQWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQWelcomeController.swift; sourceTree = "<group>"; };
 		77CA30841DDC0F2C003E13FC /* JQStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQStatus.swift; sourceTree = "<group>"; };
+		77CA30861DDC3483003E13FC /* JQStatusPictureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQStatusPictureInfo.swift; sourceTree = "<group>"; };
+		77CA30881DDC34C3003E13FC /* JQUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQUser.swift; sourceTree = "<group>"; };
+		77CA308A1DDC3592003E13FC /* JQHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQHomeViewModel.swift; sourceTree = "<group>"; };
+		77CA308C1DDC3833003E13FC /* JQStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQStatusViewModel.swift; sourceTree = "<group>"; };
 		D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaSwiftPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94674E99D48EF399B462D31 /* Pods-SinaSwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaSwiftPractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +176,8 @@
 			children = (
 				775A72561DDA1F08007B8626 /* JQUserAccount.swift */,
 				77CA30841DDC0F2C003E13FC /* JQStatus.swift */,
+				77CA30861DDC3483003E13FC /* JQStatusPictureInfo.swift */,
+				77CA30881DDC34C3003E13FC /* JQUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				775A72681DDAC430007B8626 /* JQUserAccountViewModel.swift */,
+				77CA308A1DDC3592003E13FC /* JQHomeViewModel.swift */,
+				77CA308C1DDC3833003E13FC /* JQStatusViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -492,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				775A724A1DD9B7E0007B8626 /* JQOAuthController.swift in Sources */,
+				77CA30891DDC34C3003E13FC /* JQUser.swift in Sources */,
 				770010831DD6B74D004281C9 /* JQTempController.swift in Sources */,
 				77222DB41DD424D900B29165 /* JQMessageController.swift in Sources */,
 				775A72671DDAA9BF007B8626 /* UIColor+Extension.swift in Sources */,
@@ -503,9 +516,11 @@
 				77222DB61DD424EA00B29165 /* JQDiscoverController.swift in Sources */,
 				770010811DD6B3D9004281C9 /* UIView+Extension.swift in Sources */,
 				775A724D1DD9BAAD007B8626 /* Common.swift in Sources */,
+				77CA30871DDC3483003E13FC /* JQStatusPictureInfo.swift in Sources */,
 				770010871DD6BF66004281C9 /* JQMainNavController.swift in Sources */,
 				775A72651DDAA9BF007B8626 /* NSAttributeString+Extension.swift in Sources */,
 				775A726B1DDAFB77007B8626 /* JQWelcomeController.swift in Sources */,
+				77CA308D1DDC3833003E13FC /* JQStatusViewModel.swift in Sources */,
 				770010851DD6B8F9004281C9 /* UIBarButtonItem+Extension.swift in Sources */,
 				775A72531DDA017A007B8626 /* ProgressView.swift in Sources */,
 				77222DB81DD424FB00B29165 /* JQProfileController.swift in Sources */,
@@ -514,6 +529,7 @@
 				775A71651DD80FFB007B8626 /* UILabel+Extension.swift in Sources */,
 				775A71611DD80744007B8626 /* JQBaseTableController.swift in Sources */,
 				775A72571DDA1F08007B8626 /* JQUserAccount.swift in Sources */,
+				77CA308B1DDC3592003E13FC /* JQHomeViewModel.swift in Sources */,
 				77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */,
 				770010A61DD6F855004281C9 /* JQSearchTextView.swift in Sources */,
 				77222DAE1DD4248600B29165 /* JQTabBarController.swift in Sources */,
