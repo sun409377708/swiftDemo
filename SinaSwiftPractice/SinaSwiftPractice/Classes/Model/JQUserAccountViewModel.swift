@@ -13,7 +13,12 @@ private let path = ("account.plist" as NSString).jq_appendDocumentDir()
 
 class JQUserAccountViewModel: NSObject {
     
-    var userAccount:JQUserAccount?
+    var userAccount:JQUserAccount? {
+        didSet {
+            let urlString = userAccount?.avatar_large ?? ""
+            iconURL = URL(string: urlString)
+        }
+    }
     
     //用户登录逻辑
     // 1. 首次登陆 -> 账号密码 -> 获取token 
@@ -38,11 +43,17 @@ class JQUserAccountViewModel: NSObject {
         return true
     }
     
+    //头像图片地址
+    var iconURL: URL?
+    
     override init() {
         super.init()
         
         //读取沙盒的值
         self.userAccount = loadUserAccount()
+        
+        let urlString = userAccount?.avatar_large ?? ""
+        iconURL = URL(string: urlString)
     }
     
     
@@ -106,11 +117,11 @@ class JQUserAccountViewModel: NSObject {
             //字典转模型
             let account = JQUserAccount(dict : userInfo)
             
-            //给userAccount赋值
-            self.userAccount = account
-            
             //保存沙盒
             self.saveUserAccount(userAccount: account)
+            
+            //给userAccount赋值
+            self.userAccount = account
             
             finished(true)
             
@@ -122,11 +133,13 @@ class JQUserAccountViewModel: NSObject {
     private func saveUserAccount(userAccount : JQUserAccount) {
         
         NSKeyedArchiver.archiveRootObject(userAccount, toFile: path)
+        
     }
     
     //解档数据
     private func loadUserAccount() -> JQUserAccount?{
         let account = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? JQUserAccount
+        print(path)
         
         return account
     }

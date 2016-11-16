@@ -17,10 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        registerNotification()
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         
 //        let mainTab = JQTabBarController()
-        let mainTab = JQWelcomeController()
+        
+        let mainTab = defaultController()
         
         window?.rootViewController = mainTab
         
@@ -29,7 +32,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    private func defaultController () -> UIViewController {
+        
+        return JQUserAccountViewModel.sharedModel.userLogin ? JQWelcomeController() : JQTabBarController()
+    }
     
+    private func registerNotification() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeRootController), name: NSNotification.Name(AppSwitchRootViewController), object: nil)
+    }
+    
+    @objc private func changeRootController(noty: Notification) {
+        
+        if noty.object != nil {
+            window?.rootViewController = JQTabBarController()
+        }else {
+            window?.rootViewController = JQWelcomeController()
+        }
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -25,7 +25,7 @@ class JQUserAccount: NSObject, NSCoding {
     /// 用户的昵称
     var name: String?
     /// 用户的头像地址
-    var profile_image_url: String?
+    var avatar_large: String?
     
     init(dict: [String : Any]) {
         
@@ -41,7 +41,7 @@ class JQUserAccount: NSObject, NSCoding {
         aCoder.encode(access_token, forKey: "access_token")
         aCoder.encode(uid, forKey: "uid")
         aCoder.encode(name, forKey: "name")
-        aCoder.encode(profile_image_url, forKey: "profile_image_url")
+        aCoder.encode(avatar_large, forKey: "avatar_large")
         aCoder.encode(expiresDate, forKey: "expiresDate")
     }
     
@@ -49,7 +49,7 @@ class JQUserAccount: NSObject, NSCoding {
         access_token = aDecoder.decodeObject(forKey: "access_token") as? String
         uid = aDecoder.decodeObject(forKey: "uid") as? String
         name = aDecoder.decodeObject(forKey: "name") as? String
-        profile_image_url = aDecoder.decodeObject(forKey: "profile_image_url") as? String
+        avatar_large = aDecoder.decodeObject(forKey: "avatar_large") as? String
         expiresDate = aDecoder.decodeObject(forKey: "expiresDate") as? Date
     }
     

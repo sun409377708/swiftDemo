@@ -99,8 +99,8 @@ extension JQOAuthController: UIWebViewDelegate {
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         print("~~~~~~~~~~~~~~~")
-        let urlString = request.url?.absoluteString ?? ""
         
+        let urlString = request.url?.absoluteString ?? ""
         let flag = "code="
         
         if urlString.contains(flag) {
@@ -121,9 +121,9 @@ extension JQOAuthController: UIWebViewDelegate {
                 
                 //用户登录成功, 跳转控制器
                 print("登录成功")
-                let welcomeVC = JQWelcomeController()
                 
-                self.present(welcomeVC, animated: true, completion: nil)
+//                UIApplication.shared.keyWindow?.rootViewController = JQWelcomeController()
+                NotificationCenter.default.post(name: Notification.Name(AppSwitchRootViewController), object: nil)
             })
             
             return false

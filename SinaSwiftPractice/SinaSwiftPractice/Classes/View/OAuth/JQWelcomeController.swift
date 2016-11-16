@@ -7,14 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 class JQWelcomeController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.white
-        
+                
         setupUI()
     }
     
@@ -35,11 +34,15 @@ class JQWelcomeController: UIViewController {
                 self.welcomeLabel.alpha = 1
             }, completion: { (_) in
                 print("ok")
+                //切换控制器
+//                UIApplication.shared.keyWindow?.rootViewController = JQTabBarController()
+                NotificationCenter.default.post(name: Notification.Name(AppSwitchRootViewController), object: "welcome")
             })
         }
     }
     
     private func setupUI() {
+        self.view.backgroundColor = UIColor(white: 235 / 255.0, alpha: 1)
     
         view.addSubview(iconView)
         view.addSubview(welcomeLabel)
@@ -54,8 +57,10 @@ class JQWelcomeController: UIViewController {
             make.centerX.equalTo(view)
             make.top.equalTo(iconView.snp.bottom).offset(16)
         }
+
+        iconView.sd_setImage(with: JQUserAccountViewModel.sharedModel.iconURL)
+        
     }
-    
     
     //懒加载控件
     private lazy var iconView: UIImageView = {
