@@ -55,6 +55,8 @@ class JQHomeController: JQBaseTableController {
         tableView.register(nib, forCellReuseIdentifier: cellId)
         
         tableView.rowHeight = 360
+        
+        tableView.separatorStyle = .none
     }
     
     @objc private func push() {

@@ -76,14 +76,60 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-v3-xE4">
+                        <rect key="frame" x="0.0" y="161" width="357" height="36"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w7-NK-KUV">
+                                <rect key="frame" x="0.0" y="0.0" width="119" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="评论" image="timeline_icon_comment">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJk-iJ-CcZ">
+                                <rect key="frame" x="119" y="0.0" width="119" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="转发" image="timeline_icon_retweet">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2r-zi-4Ov">
+                                <rect key="frame" x="238" y="0.0" width="119" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="赞" image="timeline_icon_unlike">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Q2r-zi-4Ov" secondAttribute="trailing" id="01t-fL-1FI"/>
+                            <constraint firstItem="5w7-NK-KUV" firstAttribute="leading" secondItem="SUt-v3-xE4" secondAttribute="leading" id="4yn-qS-WLz"/>
+                            <constraint firstItem="oJk-iJ-CcZ" firstAttribute="width" secondItem="5w7-NK-KUV" secondAttribute="width" id="95P-LM-kzN"/>
+                            <constraint firstAttribute="bottom" secondItem="5w7-NK-KUV" secondAttribute="bottom" id="HA0-Kc-njk"/>
+                            <constraint firstAttribute="height" constant="36" id="Iec-rF-aHl"/>
+                            <constraint firstAttribute="bottom" secondItem="oJk-iJ-CcZ" secondAttribute="bottom" id="Nhl-5o-Y3f"/>
+                            <constraint firstItem="Q2r-zi-4Ov" firstAttribute="leading" secondItem="oJk-iJ-CcZ" secondAttribute="trailing" id="OFx-NG-fnS"/>
+                            <constraint firstAttribute="bottom" secondItem="Q2r-zi-4Ov" secondAttribute="bottom" id="bON-Kj-IyD"/>
+                            <constraint firstItem="5w7-NK-KUV" firstAttribute="top" secondItem="SUt-v3-xE4" secondAttribute="top" id="ckn-xA-zdb"/>
+                            <constraint firstItem="Q2r-zi-4Ov" firstAttribute="height" secondItem="5w7-NK-KUV" secondAttribute="height" id="fEg-vC-qaC"/>
+                            <constraint firstItem="oJk-iJ-CcZ" firstAttribute="leading" secondItem="5w7-NK-KUV" secondAttribute="trailing" id="m1x-b2-MzR"/>
+                            <constraint firstItem="oJk-iJ-CcZ" firstAttribute="top" secondItem="SUt-v3-xE4" secondAttribute="top" id="oRY-2e-fXJ"/>
+                            <constraint firstItem="Q2r-zi-4Ov" firstAttribute="width" secondItem="5w7-NK-KUV" secondAttribute="width" id="oiO-d3-6Iq"/>
+                            <constraint firstItem="Q2r-zi-4Ov" firstAttribute="top" secondItem="SUt-v3-xE4" secondAttribute="top" id="wIL-e0-Opg"/>
+                            <constraint firstItem="oJk-iJ-CcZ" firstAttribute="height" secondItem="5w7-NK-KUV" secondAttribute="height" id="znq-QP-cHK"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="SUt-v3-xE4" secondAttribute="trailing" id="7H6-RM-QqR"/>
                     <constraint firstItem="8cG-ky-qOt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7zX-HL-Dh1"/>
                     <constraint firstItem="w8g-hv-jbL" firstAttribute="leading" secondItem="V67-bt-UvI" secondAttribute="trailing" constant="8" id="BVN-Iw-dOM"/>
                     <constraint firstItem="Hyq-Vp-fEk" firstAttribute="bottom" secondItem="w8g-hv-jbL" secondAttribute="bottom" id="Dxf-Ca-Xhx"/>
                     <constraint firstItem="KLd-43-nTx" firstAttribute="centerY" secondItem="pbS-dj-Iwg" secondAttribute="centerY" id="FbZ-Uo-PzN"/>
                     <constraint firstItem="V67-bt-UvI" firstAttribute="top" secondItem="8cG-ky-qOt" secondAttribute="bottom" constant="16" id="K3Y-kc-30h"/>
                     <constraint firstItem="KLd-43-nTx" firstAttribute="leading" secondItem="pbS-dj-Iwg" secondAttribute="trailing" constant="8" id="KJ9-m9-DQ1"/>
+                    <constraint firstItem="SUt-v3-xE4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Lzz-Hp-d7i"/>
                     <constraint firstItem="8cG-ky-qOt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Sog-yc-9aY"/>
                     <constraint firstItem="Eke-Ub-Mic" firstAttribute="top" secondItem="V67-bt-UvI" secondAttribute="bottom" constant="8" id="UEy-SD-rgA"/>
                     <constraint firstItem="SqV-2D-2WG" firstAttribute="top" secondItem="Eke-Ub-Mic" secondAttribute="bottom" constant="8" id="XvO-9g-C8n"/>
@@ -95,6 +141,7 @@
                     <constraint firstItem="Hyq-Vp-fEk" firstAttribute="leading" secondItem="w8g-hv-jbL" secondAttribute="trailing" constant="8" id="hkb-Pj-9FI"/>
                     <constraint firstAttribute="trailing" secondItem="8cG-ky-qOt" secondAttribute="trailing" id="moi-ou-5fb"/>
                     <constraint firstItem="q9p-tq-QLj" firstAttribute="bottom" secondItem="V67-bt-UvI" secondAttribute="bottom" id="sBV-gK-AGU"/>
+                    <constraint firstItem="SUt-v3-xE4" firstAttribute="top" secondItem="SqV-2D-2WG" secondAttribute="bottom" constant="8" id="tAB-0I-CuS"/>
                     <constraint firstItem="Eke-Ub-Mic" firstAttribute="leading" secondItem="V67-bt-UvI" secondAttribute="leading" id="u1z-uc-d9l"/>
                     <constraint firstItem="SqV-2D-2WG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vBM-94-XhH"/>
                 </constraints>
@@ -108,6 +155,7 @@
                 <outlet property="nameLabel" destination="pbS-dj-Iwg" id="etn-UO-dXX"/>
                 <outlet property="pictureView" destination="SqV-2D-2WG" id="hFI-7R-wyd"/>
                 <outlet property="pictureViewHeightCons" destination="r96-Sc-YKa" id="k1d-kX-M0w"/>
+                <outlet property="pictureViewTopCons" destination="XvO-9g-C8n" id="Pcx-G2-Eib"/>
                 <outlet property="pictureViewWidthCons" destination="8Xz-1d-tgM" id="aym-Xe-KQ6"/>
                 <outlet property="sourceLabel" destination="Hyq-Vp-fEk" id="GeC-XG-SXC"/>
                 <outlet property="timeLabel" destination="w8g-hv-jbL" id="gzq-lS-onM"/>
@@ -118,5 +166,8 @@
     <resources>
         <image name="avatar_vip" width="17" height="17"/>
         <image name="common_icon_membership" width="14" height="14"/>
+        <image name="timeline_icon_comment" width="18" height="18"/>
+        <image name="timeline_icon_retweet" width="18" height="18"/>
+        <image name="timeline_icon_unlike" width="18" height="18"/>
     </resources>
 </document>

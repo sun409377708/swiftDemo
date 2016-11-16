@@ -39,6 +39,7 @@ class JQStatusCell: UITableViewCell {
     
     @IBOutlet weak var pictureViewHeightCons: NSLayoutConstraint!
     
+    @IBOutlet weak var pictureViewTopCons: NSLayoutConstraint!
     @IBOutlet weak var pictureView: JQPictureView!
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -63,6 +64,9 @@ class JQStatusCell: UITableViewCell {
             
             //传递数据给配图视图
             pictureView.pictureInfo = viewmodel?.status?.pic_urls
+            
+            //根据是否有配图调整顶部间距
+            pictureViewTopCons.constant = (count == 0 ? 0 : commonMargin)
         }
     }
     
