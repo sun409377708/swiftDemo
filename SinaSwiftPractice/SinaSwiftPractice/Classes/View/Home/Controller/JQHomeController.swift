@@ -54,7 +54,9 @@ class JQHomeController: JQBaseTableController {
         
         tableView.register(nib, forCellReuseIdentifier: cellId)
         
-        tableView.rowHeight = 360
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 360
+//        tableView.rowHeight = 360
         
         tableView.separatorStyle = .none
     }

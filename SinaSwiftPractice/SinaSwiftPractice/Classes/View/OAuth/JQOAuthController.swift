@@ -122,8 +122,9 @@ extension JQOAuthController: UIWebViewDelegate {
                 //用户登录成功, 跳转控制器
                 print("登录成功")
                 
-//                UIApplication.shared.keyWindow?.rootViewController = JQWelcomeController()
-                NotificationCenter.default.post(name: Notification.Name(AppSwitchRootViewController), object: nil)
+                self.dismiss(animated: false, completion: {
+                    NotificationCenter.default.post(name: Notification.Name(AppSwitchRootViewController), object: nil)
+                })
             })
             
             return false

@@ -25,7 +25,7 @@ class ProgressView: UIView {
     
     func startAnimation() {
         
-        self.alpha = 1
+        self.alpha = 1.0
         self.frame.size.width = 0
         
         UIView.animate(withDuration: 0.3, animations: {

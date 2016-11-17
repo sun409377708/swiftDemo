@@ -423,6 +423,7 @@
 				TargetAttributes = {
 					77222D6D1DD406E000B29165 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 47LF34TNU8;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -655,10 +656,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 47LF34TNU8;
 				INFOPLIST_FILE = SinaSwiftPractice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iOS.SinaSwiftPractice;
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.AliyPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SinaSwiftPractice/Classes/Tools/Extension/SinaSwiftPractice-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -673,10 +675,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 47LF34TNU8;
 				INFOPLIST_FILE = SinaSwiftPractice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iOS.SinaSwiftPractice;
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.AliyPay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SinaSwiftPractice/Classes/Tools/Extension/SinaSwiftPractice-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
