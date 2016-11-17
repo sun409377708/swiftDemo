@@ -14,13 +14,34 @@ class JQStatusViewModel: NSObject {
     var memberImage:UIImage?
     var iconURL:URL?
     
+    //评论文字
+    var comment_text:String?
+    var ohYeah_text:String?
+    var repost_text:String?
+    
     
     var status: JQStatus? {
         didSet {
             dealHeadImage()
             dealAvatarImage()
             dealMemberImage()
+            
+            comment_text = dealToolBarText(count: status?.comments_count ?? 0, defaultText: "评论")
+            ohYeah_text = dealToolBarText(count: status?.attitudes_count ?? 0, defaultText: "赞")
+            repost_text = dealToolBarText(count: status?.reposts_count ?? 0, defaultText: "转发")
         }
+    }
+    
+    private func dealToolBarText(count: Int, defaultText: String) -> String {
+        if count == 0 {
+            return defaultText
+        }
+        
+        if count > 10000 {
+            return "\(Double(count / 1000) / 10)万"
+        }
+        
+        return "\(count)"
     }
     
     private func dealHeadImage() {

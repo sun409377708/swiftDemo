@@ -101,7 +101,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80421401520000002" green="0.80421401520000002" blue="0.80421401520000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Q2r-zi-4Ov" secondAttribute="trailing" id="01t-fL-1FI"/>
                             <constraint firstItem="5w7-NK-KUV" firstAttribute="leading" secondItem="SUt-v3-xE4" secondAttribute="leading" id="4yn-qS-WLz"/>
@@ -143,21 +143,23 @@
                     <constraint firstItem="q9p-tq-QLj" firstAttribute="bottom" secondItem="V67-bt-UvI" secondAttribute="bottom" id="sBV-gK-AGU"/>
                     <constraint firstItem="SUt-v3-xE4" firstAttribute="top" secondItem="SqV-2D-2WG" secondAttribute="bottom" constant="8" id="tAB-0I-CuS"/>
                     <constraint firstItem="Eke-Ub-Mic" firstAttribute="leading" secondItem="V67-bt-UvI" secondAttribute="leading" id="u1z-uc-d9l"/>
-                    <constraint firstAttribute="bottom" secondItem="SUt-v3-xE4" secondAttribute="bottom" constant="39" id="uI6-g7-vL5"/>
                     <constraint firstItem="SqV-2D-2WG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vBM-94-XhH"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarImage" destination="q9p-tq-QLj" id="hQO-eS-uMl"/>
+                <outlet property="commentBtn" destination="5w7-NK-KUV" id="1wh-kg-e4W"/>
                 <outlet property="contentLabel" destination="Eke-Ub-Mic" id="aqz-Ky-Ygu"/>
                 <outlet property="flowLayout" destination="CLh-OG-hT9" id="IM4-jm-Txk"/>
                 <outlet property="iconView" destination="V67-bt-UvI" id="WaW-il-lF5"/>
                 <outlet property="memberImage" destination="KLd-43-nTx" id="96e-9u-8Tw"/>
                 <outlet property="nameLabel" destination="pbS-dj-Iwg" id="etn-UO-dXX"/>
+                <outlet property="ohYeahBtn" destination="Q2r-zi-4Ov" id="5nQ-x8-uzA"/>
                 <outlet property="pictureView" destination="SqV-2D-2WG" id="hFI-7R-wyd"/>
                 <outlet property="pictureViewHeightCons" destination="r96-Sc-YKa" id="k1d-kX-M0w"/>
                 <outlet property="pictureViewTopCons" destination="XvO-9g-C8n" id="Pcx-G2-Eib"/>
                 <outlet property="pictureViewWidthCons" destination="8Xz-1d-tgM" id="aym-Xe-KQ6"/>
+                <outlet property="repostBtn" destination="oJk-iJ-CcZ" id="N6C-Nz-fXa"/>
                 <outlet property="sourceLabel" destination="Hyq-Vp-fEk" id="GeC-XG-SXC"/>
                 <outlet property="timeLabel" destination="w8g-hv-jbL" id="gzq-lS-onM"/>
             </connections>

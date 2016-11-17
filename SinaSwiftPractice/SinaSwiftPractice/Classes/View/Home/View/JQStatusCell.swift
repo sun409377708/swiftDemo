@@ -40,9 +40,16 @@ class JQStatusCell: UITableViewCell {
     @IBOutlet weak var pictureViewHeightCons: NSLayoutConstraint!
     
     @IBOutlet weak var pictureViewTopCons: NSLayoutConstraint!
+    
     @IBOutlet weak var pictureView: JQPictureView!
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
+    @IBOutlet weak var commentBtn: UIButton!
+    
+    @IBOutlet weak var repostBtn: UIButton!
+    
+    @IBOutlet weak var ohYeahBtn: UIButton!
     
     var viewmodel: JQStatusViewModel? {
         didSet {
@@ -67,6 +74,11 @@ class JQStatusCell: UITableViewCell {
             
             //根据是否有配图调整顶部间距
             pictureViewTopCons.constant = (count == 0 ? 0 : commonMargin)
+            
+            //设置工具条按钮
+            commentBtn.setTitle(viewmodel?.comment_text, for: .normal)
+            repostBtn.setTitle(viewmodel?.repost_text, for: .normal)
+            ohYeahBtn.setTitle(viewmodel?.ohYeah_text, for: .normal)
         }
     }
     

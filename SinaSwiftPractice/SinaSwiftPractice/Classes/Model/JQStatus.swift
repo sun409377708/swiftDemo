@@ -26,6 +26,16 @@ class JQStatus: NSObject, YYModel {
     //用户
     var user: JQUser?
     
+    //评论数
+    var comments_count: Int = 0
+    
+    //转发数
+    var reposts_count: Int = 0
+    
+    //点赞数
+    var attitudes_count: Int = 0
+    
+    
     //配图视图的模型数组
     var pic_urls: [JQStatusPictureInfo]?
     
