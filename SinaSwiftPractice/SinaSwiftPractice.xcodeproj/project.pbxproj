@@ -47,6 +47,7 @@
 		77CA30901DDC401D003E13FC /* JQStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA308E1DDC401D003E13FC /* JQStatusCell.swift */; };
 		77CA30911DDC401D003E13FC /* JQStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77CA308F1DDC401D003E13FC /* JQStatusCell.xib */; };
 		77CA30931DDCBBF3003E13FC /* JQPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA30921DDCBBF3003E13FC /* JQPictureView.swift */; };
+		77D143FB1DDE9F1400F8E14D /* JQRetweetedStatus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D143FA1DDE9F1400F8E14D /* JQRetweetedStatus.xib */; };
 		E29DB6FA40EE99DA7E11FDA6 /* Pods_SinaSwiftPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		77CA308E1DDC401D003E13FC /* JQStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQStatusCell.swift; sourceTree = "<group>"; };
 		77CA308F1DDC401D003E13FC /* JQStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQStatusCell.xib; sourceTree = "<group>"; };
 		77CA30921DDCBBF3003E13FC /* JQPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQPictureView.swift; sourceTree = "<group>"; };
+		77D143FA1DDE9F1400F8E14D /* JQRetweetedStatus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JQRetweetedStatus.xib; sourceTree = "<group>"; };
 		D1E8C4E89C41C9CDA9D8495D /* Pods_SinaSwiftPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinaSwiftPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E94674E99D48EF399B462D31 /* Pods-SinaSwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinaSwiftPractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinaSwiftPractice/Pods-SinaSwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,6 +271,7 @@
 			children = (
 				77CA308E1DDC401D003E13FC /* JQStatusCell.swift */,
 				77CA308F1DDC401D003E13FC /* JQStatusCell.xib */,
+				77D143FA1DDE9F1400F8E14D /* JQRetweetedStatus.xib */,
 				77CA30921DDCBBF3003E13FC /* JQPictureView.swift */,
 			);
 			path = View;
@@ -456,6 +459,7 @@
 				770010A81DD6F866004281C9 /* SearchTextView.xib in Resources */,
 				7700107C1DD621AB004281C9 /* SearchView.xib in Resources */,
 				77222D791DD406E000B29165 /* Assets.xcassets in Resources */,
+				77D143FB1DDE9F1400F8E14D /* JQRetweetedStatus.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

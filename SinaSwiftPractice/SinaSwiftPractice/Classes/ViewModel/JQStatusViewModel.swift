@@ -19,6 +19,10 @@ class JQStatusViewModel: NSObject {
     var ohYeah_text:String?
     var repost_text:String?
     
+    //设置配图
+    var pictureInfos: [JQStatusPictureInfo]? {
+        return status?.retweeted_status == nil ? status?.pic_urls : status?.retweeted_status?.pic_urls
+    }
     
     var status: JQStatus? {
         didSet {

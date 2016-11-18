@@ -51,6 +51,7 @@ class JQStatusCell: UITableViewCell {
     
     @IBOutlet weak var ohYeahBtn: UIButton!
     
+    @IBOutlet weak var retweetedText: UILabel!
     var viewmodel: JQStatusViewModel? {
         didSet {
            
@@ -63,22 +64,23 @@ class JQStatusCell: UITableViewCell {
             contentLabel.text = viewmodel?.status?.text
             
             //计算配图视图大小
-            let count = viewmodel?.status?.pic_urls?.count ?? 0
+//            let count = viewmodel?.status?.pic_urls?.count ?? 0
+            let count = viewmodel?.pictureInfos?.count ?? 0
             let size = changePictureViewSize(count: count)
             
             pictureViewWidthCons.constant = size.width
             pictureViewHeightCons.constant = size.height
             
             //传递数据给配图视图
-            pictureView.pictureInfo = viewmodel?.status?.pic_urls
-            
+            pictureView.pictureInfo = viewmodel?.pictureInfos
+            retweetedText?.text = viewmodel?.status?.retweeted_status?.text
             //根据是否有配图调整顶部间距
             pictureViewTopCons.constant = (count == 0 ? 0 : commonMargin)
-            
             //设置工具条按钮
             commentBtn.setTitle(viewmodel?.comment_text, for: .normal)
             repostBtn.setTitle(viewmodel?.repost_text, for: .normal)
             ohYeahBtn.setTitle(viewmodel?.ohYeah_text, for: .normal)
+            
         }
     }
     
@@ -89,7 +91,7 @@ class JQStatusCell: UITableViewCell {
         selectionStyle = .none
 
         contentLabel.preferredMaxLayoutWidth = ScreenWidth - 2 * commonMargin
-        
+        retweetedText?.preferredMaxLayoutWidth =  ScreenWidth - 2 * commonMargin
         //设置配图视图流水布局
         flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         

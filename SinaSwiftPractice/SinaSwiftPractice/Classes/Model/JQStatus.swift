@@ -35,6 +35,9 @@ class JQStatus: NSObject, YYModel {
     //点赞数
     var attitudes_count: Int = 0
     
+    //转发微博
+    var retweeted_status: JQStatus?
+    
     
     //配图视图的模型数组
     var pic_urls: [JQStatusPictureInfo]?

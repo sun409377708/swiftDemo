@@ -10,7 +10,8 @@ import UIKit
 import YYModel
 import SVProgressHUD
 
-private let cellId = "JQStatusCellid"
+private let originalCellId = "JQStatusCellid"
+private let retweetedCellId = "JQRetweetedStatusid"
 
 class JQHomeController: JQBaseTableController {
     
@@ -50,12 +51,12 @@ class JQHomeController: JQBaseTableController {
     // MARK: - 设置tableView
     private func setTableView() {
         
-        let nib = UINib.init(nibName: "JQStatusCell", bundle: nil)
+        let originalNib = UINib.init(nibName: "JQStatusCell", bundle: nil)
+        let retweedNib = UINib.init(nibName: "JQRetweetedStatus", bundle: nil)
         
-        tableView.register(nib, forCellReuseIdentifier: cellId)
-        
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 360
+        tableView.register(originalNib, forCellReuseIdentifier: originalCellId)
+        tableView.register(retweedNib, forCellReuseIdentifier: retweetedCellId)
+
         tableView.rowHeight = 360
         
         tableView.separatorStyle = .none
@@ -82,16 +83,25 @@ class JQHomeController: JQBaseTableController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let model = self.homeViewModel.viewmodelArray[indexPath.row]
+
+        let cellId = self.getCellId(model: model)
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! JQStatusCell
 
-        let model = self.homeViewModel.viewmodelArray[indexPath.row]
         
         cell.viewmodel = model
         
         return cell
     }
     
-
+    private func getCellId(model: JQStatusViewModel) -> String {
+        
+        if model.status?.retweeted_status == nil {
+            return originalCellId
+        }
+        return retweetedCellId
+    }
 
 
 }
