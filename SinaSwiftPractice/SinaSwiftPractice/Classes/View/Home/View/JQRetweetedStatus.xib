@@ -134,7 +134,7 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.68211410979999998" green="0.68211410979999998" blue="0.68211410979999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YkR-U0-lO4" firstAttribute="leading" secondItem="SwB-Ir-wTf" secondAttribute="leading" constant="8" id="01t-ag-hZi"/>
                             <constraint firstItem="cy1-NP-TfU" firstAttribute="leading" secondItem="SwB-Ir-wTf" secondAttribute="leading" constant="8" id="Bbf-yC-MyN"/>
@@ -189,6 +189,7 @@
                 <outlet property="retweetedText" destination="cy1-NP-TfU" id="s0K-xK-m7p"/>
                 <outlet property="sourceLabel" destination="n3d-63-0Ni" id="xNa-Rg-jq1"/>
                 <outlet property="timeLabel" destination="MYR-Gs-Oq1" id="ArM-EI-9GI"/>
+                <outlet property="toolBarView" destination="Wa5-6k-IKZ" id="d3a-sj-X2X"/>
             </connections>
             <point key="canvasLocation" x="43.5" y="54"/>
         </tableViewCell>

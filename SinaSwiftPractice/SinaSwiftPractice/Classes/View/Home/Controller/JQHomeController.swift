@@ -95,6 +95,27 @@ class JQHomeController: JQBaseTableController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        // 1. 根据"对应"数据获取cell
+        let viewModel = self.homeViewModel.viewmodelArray[indexPath.row]
+        
+        let cellId = getCellId(model: viewModel)
+        
+        let cell = cellWithId(cellId: cellId)
+
+        // 2. 获取最底部控件的最大Y值
+        let height = cell.ToolBarHeight(viewmodel: viewModel)
+        return height
+    }
+    
+    private func cellWithId (cellId : String) -> JQStatusCell {
+        
+        let nibName = cellId == retweetedCellId ? "JQRetweetedStatus" : "JQStatusCell"
+        
+        return UINib.init(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil).last as! JQStatusCell
+    }
+    
     private func getCellId(model: JQStatusViewModel) -> String {
         
         if model.status?.retweeted_status == nil {
@@ -102,6 +123,7 @@ class JQHomeController: JQBaseTableController {
         }
         return retweetedCellId
     }
-
+    
+    
 
 }

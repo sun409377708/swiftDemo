@@ -52,6 +52,10 @@ class JQStatusCell: UITableViewCell {
     @IBOutlet weak var ohYeahBtn: UIButton!
     
     @IBOutlet weak var retweetedText: UILabel!
+    
+    @IBOutlet weak var toolBarView: UIView!
+    
+    
     var viewmodel: JQStatusViewModel? {
         didSet {
            
@@ -82,6 +86,16 @@ class JQStatusCell: UITableViewCell {
             ohYeahBtn.setTitle(viewmodel?.ohYeah_text, for: .normal)
             
         }
+    }
+    
+    func ToolBarHeight(viewmodel: JQStatusViewModel) -> CGFloat {
+        
+        //调用set方法
+        self.viewmodel = viewmodel
+        
+        self.contentView.layoutIfNeeded()
+        
+        return toolBarView.frame.maxY
     }
     
     override func awakeFromNib() {
