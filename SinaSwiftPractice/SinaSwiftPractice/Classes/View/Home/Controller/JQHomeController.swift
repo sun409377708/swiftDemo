@@ -68,6 +68,10 @@ class JQHomeController: JQBaseTableController {
     }
     private func startAnimation(count: Int) {
         
+        if tipLabel.isHidden == false {
+            return
+        }
+        
         self.tipLabel.text = count == 0 ? "没有微博数据" : "有\(count)条数据"
         
         let originalY = self.tipLabel.frame.origin.y
@@ -99,13 +103,15 @@ class JQHomeController: JQBaseTableController {
                 return
             }
             
-            self.activtyView.stopAnimating()
             self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
             
-            //执行动画
-            
-            self.startAnimation(count: count)
+            //执行动画 上拉加载时不执行动画
+            if !self.activtyView.isAnimating {
+                self.startAnimation(count: count)
+            }
+            self.activtyView.stopAnimating()
+
         }
     }
     

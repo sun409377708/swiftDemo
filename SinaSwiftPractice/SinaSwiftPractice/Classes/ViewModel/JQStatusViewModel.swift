@@ -14,6 +14,14 @@ class JQStatusViewModel: NSObject {
     var memberImage:UIImage?
     var iconURL:URL?
     
+    //转为计算型属性,实时刷新
+    var dateString:String? {
+        let timeString = status?.created_at ?? ""
+        
+        // let timeString = "Thu Nov 17 19:09:10 +0800 2016"
+        return Date.createDateStrint(createAtStr: timeString)
+    }
+    
     //评论文字
     var comment_text:String?
     var ohYeah_text:String?
@@ -24,11 +32,15 @@ class JQStatusViewModel: NSObject {
         return status?.retweeted_status == nil ? status?.pic_urls : status?.retweeted_status?.pic_urls
     }
     
+    //来源
+    var sourceText: String?
+    
     var status: JQStatus? {
         didSet {
             dealHeadImage()
             dealAvatarImage()
             dealMemberImage()
+            sourceText = dealSource()
             
             comment_text = dealToolBarText(count: status?.comments_count ?? 0, defaultText: "评论")
             ohYeah_text = dealToolBarText(count: status?.attitudes_count ?? 0, defaultText: "赞")
@@ -76,4 +88,16 @@ class JQStatusViewModel: NSObject {
             memberImage = UIImage(named: imageName)
         }
     }
+    
+    private func dealSource() -> String {
+        
+        let str = status?.source ?? ""
+        
+        //定义标签
+        let startFlag = "\">"
+        let endFlag = "</a>"
+        
+        return str.subStringWithFlag(startFlag: startFlag, endFlag: endFlag)
+    }
+    
 }

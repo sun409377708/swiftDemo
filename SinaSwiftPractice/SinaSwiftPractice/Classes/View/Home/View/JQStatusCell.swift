@@ -63,12 +63,13 @@ class JQStatusCell: UITableViewCell {
             memberImage.image = viewmodel?.memberImage
             avatarImage.image = viewmodel?.avatarImage
             nameLabel.text = viewmodel?.status?.user?.name
-            timeLabel.text = viewmodel?.status?.created_at
-            sourceLabel.text = viewmodel?.status?.source
+//            timeLabel.text = viewmodel?.status?.created_at
+            timeLabel.text = viewmodel?.dateString
+//            sourceLabel.text = viewmodel?.status?.source
+            sourceLabel.text = viewmodel?.sourceText
             contentLabel.text = viewmodel?.status?.text
             
             //计算配图视图大小
-//            let count = viewmodel?.status?.pic_urls?.count ?? 0
             let count = viewmodel?.pictureInfos?.count ?? 0
             let size = changePictureViewSize(count: count)
             
