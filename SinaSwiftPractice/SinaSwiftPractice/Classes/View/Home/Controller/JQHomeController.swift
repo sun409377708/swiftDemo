@@ -13,10 +13,33 @@ import SVProgressHUD
 private let originalCellId = "JQStatusCellid"
 private let retweetedCellId = "JQRetweetedStatusid"
 
+private let tipLabelMargin:CGFloat = 35
+
 class JQHomeController: JQBaseTableController {
     
     //微博数组
     lazy var homeViewModel: JQHomeViewModel = JQHomeViewModel()
+    
+    //上拉加载小菊花
+    lazy var activtyView: UIActivityIndicatorView = {
+        
+        let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        
+        return activity
+    }()
+    
+    //提示小Label
+    lazy var tipLabel:UILabel = {
+        
+        let l = UILabel(title: "提示", textColor: UIColor.white, fontSize: 14)
+        
+        l.backgroundColor = UIColor.orange
+        l.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: tipLabelMargin)
+        l.textAlignment = .center
+        l.isHidden = true
+        return l
+        
+    }()
     
     
     override func viewDidLoad() {
@@ -32,19 +55,57 @@ class JQHomeController: JQBaseTableController {
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         
+        //加载数据
+        loadData()
         
         //设置tableView
         setTableView()
         
-        //加载数据
-        homeViewModel.loadData { (success) in
+        //添加提示Label
+        tipLabel.frame.origin.y = navBarHeight - tipLabelMargin
+        self.navigationController?.view.insertSubview(tipLabel, belowSubview:(navigationController?.navigationBar)!)
+        
+    }
+    private func startAnimation(count: Int) {
+        
+        self.tipLabel.text = count == 0 ? "没有微博数据" : "有\(count)条数据"
+        
+        let originalY = self.tipLabel.frame.origin.y
+        tipLabel.isHidden = false
+        
+        UIView.animate(withDuration: 2.0, animations: {
+            
+            self.tipLabel.frame.origin.y = navBarHeight
+
+            self.view.layoutIfNeeded()
+        }) { (_) in
+            
+            UIView.animate(withDuration: 1.0, delay: 1.0, options: [], animations: {
+                self.tipLabel.frame.origin.y = originalY
+
+            }, completion: { (_) in
+                self.tipLabel.isHidden = true
+            })
+        }
+    }
+    
+    //MARK: - 开始加载数据
+    internal func loadData () {
+        homeViewModel.loadData(isPullup: activtyView.isAnimating) { (success, count) in
+            
             if !success {
                 
                 SVProgressHUD.showError(withStatus: AppErrorTip)
                 return
             }
             
+            self.activtyView.stopAnimating()
+            self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
+            
+            //执行动画
+            
+            self.startAnimation(count: count)
         }
     }
     
@@ -60,6 +121,12 @@ class JQHomeController: JQBaseTableController {
         tableView.rowHeight = 360
         
         tableView.separatorStyle = .none
+        
+        tableView.tableFooterView = activtyView
+        
+        refreshControl = UIRefreshControl()
+        
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
     @objc private func push() {
@@ -94,7 +161,9 @@ class JQHomeController: JQBaseTableController {
         
         return cell
     }
-    
+}
+
+extension JQHomeController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         // 1. 根据"对应"数据获取cell
@@ -103,20 +172,20 @@ class JQHomeController: JQBaseTableController {
         let cellId = getCellId(model: viewModel)
         
         let cell = cellWithId(cellId: cellId)
-
+        
         // 2. 获取最底部控件的最大Y值
         let height = cell.ToolBarHeight(viewmodel: viewModel)
         return height
     }
     
-    private func cellWithId (cellId : String) -> JQStatusCell {
+    internal func cellWithId (cellId : String) -> JQStatusCell {
         
         let nibName = cellId == retweetedCellId ? "JQRetweetedStatus" : "JQStatusCell"
         
         return UINib.init(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil).last as! JQStatusCell
     }
     
-    private func getCellId(model: JQStatusViewModel) -> String {
+    internal func getCellId(model: JQStatusViewModel) -> String {
         
         if model.status?.retweeted_status == nil {
             return originalCellId
@@ -124,6 +193,18 @@ class JQHomeController: JQBaseTableController {
         return retweetedCellId
     }
     
-    
+    //cell将要显示
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == homeViewModel.viewmodelArray.count - 2 && activtyView.isAnimating == false {
+            print("~~~~~~~~~~~~")
+            print("到底了")
+            
+            activtyView.startAnimating()
 
+            //开始加载数据
+            loadData()
+            
+        }
+    }
 }

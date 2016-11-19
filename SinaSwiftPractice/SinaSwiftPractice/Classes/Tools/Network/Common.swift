@@ -17,6 +17,7 @@ let redirect_uri = "http://www.baidu.com"
 //定义屏幕宽度和高度
 let ScreenWidth = UIScreen.main.bounds.width
 let ScreenHeight = UIScreen.main.bounds.height
+let navBarHeight:CGFloat = 64
 
 //定义通知相关的字段
 let AppSwitchRootViewController = "AppSwitchRootViewController"
