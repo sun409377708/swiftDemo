@@ -23,6 +23,8 @@
 		77222DB61DD424EA00B29165 /* JQDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB51DD424EA00B29165 /* JQDiscoverController.swift */; };
 		77222DB81DD424FB00B29165 /* JQProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB71DD424FB00B29165 /* JQProfileController.swift */; };
 		77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB91DD4277200B29165 /* JQHomeController.swift */; };
+		77464CC81DE1F9B30064DA2D /* JQComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77464CC71DE1F9B30064DA2D /* JQComposeView.swift */; };
+		77464CCC1DE204BC0064DA2D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 77464CCB1DE204BC0064DA2D /* UIImage+ImageEffects.m */; };
 		775A71611DD80744007B8626 /* JQBaseTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71601DD80743007B8626 /* JQBaseTableController.swift */; };
 		775A71631DD80D84007B8626 /* JQVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71621DD80D84007B8626 /* JQVisitorView.swift */; };
 		775A71651DD80FFB007B8626 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71641DD80FFB007B8626 /* UILabel+Extension.swift */; };
@@ -72,6 +74,9 @@
 		77222DB51DD424EA00B29165 /* JQDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQDiscoverController.swift; sourceTree = "<group>"; };
 		77222DB71DD424FB00B29165 /* JQProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQProfileController.swift; sourceTree = "<group>"; };
 		77222DB91DD4277200B29165 /* JQHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQHomeController.swift; sourceTree = "<group>"; };
+		77464CC71DE1F9B30064DA2D /* JQComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQComposeView.swift; sourceTree = "<group>"; };
+		77464CCA1DE204BC0064DA2D /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		77464CCB1DE204BC0064DA2D /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		775A71601DD80743007B8626 /* JQBaseTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQBaseTableController.swift; sourceTree = "<group>"; };
 		775A71621DD80D84007B8626 /* JQVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQVisitorView.swift; sourceTree = "<group>"; };
 		775A71641DD80FFB007B8626 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -205,6 +210,7 @@
 		77222D861DD40C3600B29165 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				77464CC91DE204BC0064DA2D /* UIImage+Effects */,
 				775A724B1DD9BA82007B8626 /* Network */,
 				7700107F1DD6B3B2004281C9 /* Extension */,
 			);
@@ -214,6 +220,7 @@
 		77222D871DD40C3600B29165 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				77464CC41DE1F9780064DA2D /* Compose */,
 				775A72481DD9B77F007B8626 /* OAuth */,
 				77222D8E1DD40C3600B29165 /* Main */,
 				77222D8B1DD40C3600B29165 /* Home */,
@@ -364,6 +371,39 @@
 				77CA308C1DDC3833003E13FC /* JQStatusViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		77464CC41DE1F9780064DA2D /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				77464CC51DE1F9780064DA2D /* Controller */,
+				77464CC61DE1F9780064DA2D /* View */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		77464CC51DE1F9780064DA2D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		77464CC61DE1F9780064DA2D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77464CC71DE1F9B30064DA2D /* JQComposeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77464CC91DE204BC0064DA2D /* UIImage+Effects */ = {
+			isa = PBXGroup;
+			children = (
+				77464CCA1DE204BC0064DA2D /* UIImage+ImageEffects.h */,
+				77464CCB1DE204BC0064DA2D /* UIImage+ImageEffects.m */,
+			);
+			path = "UIImage+Effects";
 			sourceTree = "<group>";
 		};
 		775A72481DD9B77F007B8626 /* OAuth */ = {
@@ -535,6 +575,7 @@
 				770010811DD6B3D9004281C9 /* UIView+Extension.swift in Sources */,
 				775A724D1DD9BAAD007B8626 /* Common.swift in Sources */,
 				77CA30871DDC3483003E13FC /* JQStatusPictureInfo.swift in Sources */,
+				77464CCC1DE204BC0064DA2D /* UIImage+ImageEffects.m in Sources */,
 				770010871DD6BF66004281C9 /* JQMainNavController.swift in Sources */,
 				775A72651DDAA9BF007B8626 /* NSAttributeString+Extension.swift in Sources */,
 				775A726B1DDAFB77007B8626 /* JQWelcomeController.swift in Sources */,
@@ -549,6 +590,7 @@
 				775A72571DDA1F08007B8626 /* JQUserAccount.swift in Sources */,
 				77CA308B1DDC3592003E13FC /* JQHomeViewModel.swift in Sources */,
 				77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */,
+				77464CC81DE1F9B30064DA2D /* JQComposeView.swift in Sources */,
 				77CA30931DDCBBF3003E13FC /* JQPictureView.swift in Sources */,
 				770010A61DD6F855004281C9 /* JQSearchTextView.swift in Sources */,
 				77222DAE1DD4248600B29165 /* JQTabBarController.swift in Sources */,

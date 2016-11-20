@@ -91,6 +91,24 @@ extension UIImage {
         
         return CGSize(width: width, height: height)
     }
+    
+    //屏幕截图
+    class func snapShotCurrent() -> UIImage {
+        //截取当前屏幕
+        let window = (UIApplication.shared.keyWindow)!
+        // 1. 开启位图
+        UIGraphicsBeginImageContextWithOptions(window.bounds.size, false, UIScreen.main.scale)
+        //绘制
+        window.drawHierarchy(in: window.bounds, afterScreenUpdates: false)
+        
+        //提取
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        //关闭
+        UIGraphicsEndImageContext()
+        
+        return image!
+    }
 }
 
 

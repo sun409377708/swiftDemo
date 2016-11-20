@@ -29,7 +29,8 @@ class JQMainTabBar: UITabBar {
         composeBtn.addTarget(self, action: #selector(composeBtnDidClick), for: .touchUpInside)
     }
     
-    @objc private func composeBtnDidClick() {
+    @objc private func composeBtnDidClick(btn: UIButton) {
+                
         composeClosure?()
     }
     

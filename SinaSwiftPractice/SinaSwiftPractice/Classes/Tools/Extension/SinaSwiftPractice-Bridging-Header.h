@@ -3,3 +3,4 @@
 //
 
 #import <CommonCrypto/CommonDigest.h>
+#import "UIImage+ImageEffects.h"

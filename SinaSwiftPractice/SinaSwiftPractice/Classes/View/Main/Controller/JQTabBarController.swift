@@ -20,6 +20,11 @@ class JQTabBarController: UITabBarController {
         
         tabbar.composeClosure = {[weak self] in
             print("按钮被dianji")
+            
+            let composeView = JQComposeView()
+            let window = UIApplication.shared.keyWindow
+            
+            window?.addSubview(composeView)
         }
         
         //KVC赋值
@@ -32,15 +37,15 @@ class JQTabBarController: UITabBarController {
     func addController() {
         var tempArrM = [UIViewController]()
         
-        tempArrM.append(self.addControllers(clsName: "JQHomeController", title: "首页", imageName: "tabbar_home"))
-        tempArrM.append(self.addControllers(clsName: "JQMessageController", title: "消息", imageName: "tabbar_message_center"))
-        tempArrM.append(self.addControllers(clsName: "JQDiscoverController", title: "发现", imageName: "tabbar_discover"))
-        tempArrM.append(self.addControllers(clsName: "JQProfileController", title: "我", imageName: "tabbar_profile"))
+        tempArrM.append(self.addControllers(clsName: "JQHomeController", title: "首页", imageName: "tabbar_home", index: 0))
+        tempArrM.append(self.addControllers(clsName: "JQMessageController", title: "消息", imageName: "tabbar_message_center", index: 1))
+        tempArrM.append(self.addControllers(clsName: "JQDiscoverController", title: "发现", imageName: "tabbar_discover", index: 2))
+        tempArrM.append(self.addControllers(clsName: "JQProfileController", title: "我", imageName: "tabbar_profile", index: 3))
         
         self.viewControllers = tempArrM
     }
     
-    func addControllers(clsName: String, title: String, imageName: String) -> UIViewController {
+    func addControllers(clsName: String, title: String, imageName: String, index: Int) -> UIViewController {
         
         let cls = NSClassFromString("SinaSwiftPractice." + clsName) as? UIViewController.Type
         
@@ -50,6 +55,7 @@ class JQTabBarController: UITabBarController {
         
         vc.navigationItem.title = title
         
+        vc.tabBarItem.tag = index
         vc.tabBarItem.title = title
         vc.tabBarItem.image = UIImage(named: imageName)
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
@@ -61,6 +67,35 @@ class JQTabBarController: UITabBarController {
         let nav = JQMainNavController(rootViewController: vc)
         
         return nav
+    }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        //UITabBarSwappableImageView
+        
+        var index = 0
+        for subview in tabBar.subviews {
+            if subview.isKind(of: NSClassFromString("UITabBarButton")!) {
+                
+                if index == item.tag {
+                   
+                    for target in subview.subviews {
+                        if target.isKind(of: NSClassFromString("UITabBarSwappableImageView")!) {
+                            
+                            //执行动画
+                            target.transform = CGAffineTransform.init(scaleX: 0.4, y: 0.4)
+                            
+                            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: { 
+                                target.transform = CGAffineTransform.identity
+                            }, completion: { (_) in
+                                
+                            })
+                        }
+                    }
+                }
+                index += 1
+            }
+        }
+        
     }
 
 }

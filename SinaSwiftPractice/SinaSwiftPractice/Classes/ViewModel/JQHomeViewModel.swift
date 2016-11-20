@@ -86,7 +86,7 @@ class JQHomeViewModel: NSObject {
                 group.enter()
                 SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _, _) in
                     
-                    print("单张图片下载完成")
+//                    print("单张图片下载完成")
                     group.leave()
                 })
             }
