@@ -75,6 +75,8 @@ class JQStatusCell: UITableViewCell {
             
             pictureViewWidthCons.constant = size.width
             pictureViewHeightCons.constant = size.height
+    
+            flowLayout.itemSize = count == 1 ? size : CGSize(width: itemWidth, height: itemWidth)
             
             //传递数据给配图视图
             pictureView.pictureInfo = viewmodel?.pictureInfos
@@ -108,11 +110,13 @@ class JQStatusCell: UITableViewCell {
         contentLabel.preferredMaxLayoutWidth = ScreenWidth - 2 * commonMargin
         retweetedText?.preferredMaxLayoutWidth =  ScreenWidth - 2 * commonMargin
         //设置配图视图流水布局
-        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+//        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         
         flowLayout.minimumLineSpacing = pictureCellMargin
         flowLayout.minimumInteritemSpacing = pictureCellMargin
     }
+    
+    
 
     private func changePictureViewSize(count: Int) -> CGSize {
         
@@ -127,6 +131,9 @@ class JQStatusCell: UITableViewCell {
             let urlString = viewmodel?.pictureInfos?.first?.wap_pic ?? ""
             //获取磁盘中的图片根据路径
             let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: urlString)
+            
+            let imageSize = image!.size
+            return CGSize(width: imageSize.width, height: imageSize.height)
         }
         
         //4 图
