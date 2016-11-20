@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class JQComposeView: UIView {
 
     override init(frame: CGRect) {
@@ -28,7 +29,37 @@ class JQComposeView: UIView {
     private func setupUI() {
         //截屏
         let imageView = UIImageView(image: UIImage.snapShotCurrent().applyLightEffect())
-            
+        
         addSubview(imageView)
+        
+        //添加按钮
+        addButtons()
+    }
+    
+    
+    
+    private func addButtons() {
+        
+        let margin = (ScreenWidth - 3 * composeBtnW) / (3 + 1)
+        
+        for i in 0..<6 {
+            
+            let btn = JQComposeButton()
+            
+            btn.setTitle("位置", for: .normal)
+            btn.setImage(#imageLiteral(resourceName: "tabbar_compose_idea"), for: .normal)
+            
+            btn.backgroundColor = UIColor.red
+            
+            let col = i % 3
+            let row = i / 3
+            
+            let btnX = margin + (margin + composeBtnW) * CGFloat(col)
+            let btnY = margin + (margin + composeBtnH) * CGFloat(row)
+            
+            btn.frame = CGRect(x: btnX, y: btnY, width: composeBtnW, height: composeBtnH)
+            
+            addSubview(btn)
+        }
     }
 }
