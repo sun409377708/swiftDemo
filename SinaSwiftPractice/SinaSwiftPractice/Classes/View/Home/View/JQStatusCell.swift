@@ -121,6 +121,14 @@ class JQStatusCell: UITableViewCell {
             return CGSize.zero
         }
         
+        // 1 图
+        if count == 1 {
+            
+            let urlString = viewmodel?.pictureInfos?.first?.wap_pic ?? ""
+            //获取磁盘中的图片根据路径
+            let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: urlString)
+        }
+        
         //4 图
         if count == 4 {
             

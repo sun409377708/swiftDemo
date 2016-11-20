@@ -69,8 +69,12 @@ class JQPictureCell: UICollectionViewCell {
     
     var picture: JQStatusPictureInfo? {
         didSet {
-            let url = URL(string: picture?.thumbnail_pic ?? "")
-            self.imageView.sd_setImage(with: url)
+            let url = URL(string: picture?.wap_pic ?? "")
+            imageView.sd_setImage(with: url)
+            
+            //根据数据来设置是否显示gif的图片
+            gificon.isHidden = !url!.absoluteString.hasSuffix(".gif")
+        
         }
     }
     
@@ -81,6 +85,12 @@ class JQPictureCell: UICollectionViewCell {
         
         imageView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentView)
+        }
+        
+        contentView.addSubview(gificon)
+        
+        gificon.snp.makeConstraints { (make) in
+            make.right.bottom.equalTo(self.contentView)
         }
     }
     
@@ -98,5 +108,8 @@ class JQPictureCell: UICollectionViewCell {
         
         return iv
     }()
+    
+    private lazy var gificon: UIImageView = UIImageView(image: #imageLiteral(resourceName: "timeline_image_gif"))
+
     
 }

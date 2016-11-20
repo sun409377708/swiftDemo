@@ -7,6 +7,7 @@
 // 2.00RWLXtBoRkFdE1f247cbce7CGJUAD
 
 import UIKit
+import SDWebImage
 
 class JQHomeViewModel: NSObject {
 
@@ -53,8 +54,6 @@ class JQHomeViewModel: NSObject {
                 s.yy_modelSet(with: item)
                 
                 viewModel.status = s
-            
-                self.viewmodelArray.append(viewModel)
                 tempArrM.append(viewModel)
             }
             
@@ -65,9 +64,38 @@ class JQHomeViewModel: NSObject {
                 self.viewmodelArray = tempArrM + self.viewmodelArray
             }
             
-            finished(true, tempArrM.count)
-            
+//            finished(true, tempArrM.count)
+            self.cacheSingleImage(array: tempArrM, finished: finished)
         }
         
+    }
+    
+    private func cacheSingleImage(array: [JQStatusViewModel], finished: @escaping (Bool, Int) -> ()) {
+        
+        let group = DispatchGroup.init()
+        
+        // 1. 获取单张图片
+        for viewmodel in array {
+            
+            if viewmodel.pictureInfos?.count == 1 {
+                //单张图片
+                
+                let url = URL(string: viewmodel.pictureInfos?.first?.wap_pic ?? "")
+                
+                //进组
+                group.enter()
+                SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _, _) in
+                    
+                    print("单张图片下载完成")
+                    group.leave()
+                })
+            }
+        }
+        
+        //执行回调
+        group.notify(queue: DispatchQueue.main) {
+            print("所以单张下载完毕")
+            finished(true, array.count)
+        }
     }
 }
