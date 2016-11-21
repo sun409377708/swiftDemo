@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 enum JQComposeToolBarButtonType {
     case Picture
@@ -18,6 +19,12 @@ enum JQComposeToolBarButtonType {
 
 class JQComposeController: UIViewController {
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.textView.becomeFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
@@ -53,6 +60,26 @@ class JQComposeController: UIViewController {
     }
     
     @objc internal func sendBtnClick() {
+        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        
+        //2, 参数
+        let access_token = JQUserAccountViewModel.sharedModel.userAccount?.access_token ?? ""
+        let text = textView.text ?? ""
+        
+        let params = ["access_token" : access_token, "status" : text]
+        
+        //发送请求
+        JQNetworkTools.sharedTools.request(method: .POST, urlString: urlString, parameter: params) { (_, error) in
+            
+            if error != nil {
+                
+                SVProgressHUD.showError(withStatus: "发送失败")
+                return
+            }
+            
+            SVProgressHUD.showSuccess(withStatus: "发布微博成功")
+            self.dismiss(animated: true, completion: nil)
+        }
         
     }
     

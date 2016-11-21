@@ -54,7 +54,6 @@ extension Date {
             return timeStr
         }
         
-        // http://nshipster.com/nsdatecomponents/
         // 5.5处理一年内时间:02-12 12:23
         let cmpt =  calender.dateComponents([.year], from: createDate, to: nowDate)
         if cmpt.year! < 1 {
