@@ -22,9 +22,8 @@ class JQTabBarController: UITabBarController {
             print("按钮被dianji")
             
             let composeView = JQComposeView()
-            let window = UIApplication.shared.keyWindow
             
-            window?.addSubview(composeView)
+            composeView.show(targetVC: self)
         }
         
         //KVC赋值

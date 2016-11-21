@@ -20,15 +20,55 @@ class JQComposeView: UIView {
     
     lazy var menuButton = [JQComposeButton]()
     
+    var targetVC: UIViewController?
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         
-        backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //外界调用的方法
+    func show(targetVC: UIViewController?) {
+        
+        self.targetVC = targetVC
+        
+        targetVC?.view.addSubview(self)
+    }
+    
+    
+    //MARK: - 按钮点击
+    @objc private func menuButtonClick(button: UIButton) {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            for value in self.menuButton {
+                value.alpha = 0.01
+                if value == button {
+                    value.transform = CGAffineTransform.init(scaleX: 2, y: 2)
+                }else {
+                    value.transform = CGAffineTransform.init(scaleX: 0.01, y: 0.01)
+                }
+            }
+            
+        }) { (_) in
+            
+            let model = self.array[button.tag]
+            
+            let cls = NSClassFromString(model.className!) as! UIViewController.Type
+            
+            let vc = cls.init()
+            
+            let nav = UINavigationController(rootViewController: vc)
+            
+            self.targetVC?.present(nav, animated: true, completion: { 
+                self.removeFromSuperview()
+            })
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -77,6 +117,13 @@ class JQComposeView: UIView {
         
         addSubview(imageView)
         
+        addSubview(sloganImage)
+        
+        sloganImage.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self)
+            make.top.equalTo(100)
+        }
+        
         //添加按钮
         addButtons()
     }
@@ -123,6 +170,8 @@ class JQComposeView: UIView {
             
             btn.tag = i
             
+            btn.addTarget(self, action: #selector(menuButtonClick), for: .touchUpInside)
+            
             addSubview(btn)
             
             menuButton.append(btn)
@@ -130,7 +179,8 @@ class JQComposeView: UIView {
     }
     
     
-    
+    private lazy var sloganImage:UIImageView = UIImageView(image: UIImage(named: "compose_slogan"))
+
     
     
     
