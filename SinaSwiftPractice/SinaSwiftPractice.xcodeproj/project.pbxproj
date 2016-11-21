@@ -26,6 +26,8 @@
 		77464CC81DE1F9B30064DA2D /* JQComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77464CC71DE1F9B30064DA2D /* JQComposeView.swift */; };
 		77464CCC1DE204BC0064DA2D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 77464CCB1DE204BC0064DA2D /* UIImage+ImageEffects.m */; };
 		77464CCE1DE20C420064DA2D /* JQComposeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77464CCD1DE20C420064DA2D /* JQComposeButton.swift */; };
+		77464CD01DE293B80064DA2D /* compose.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77464CCF1DE293B80064DA2D /* compose.plist */; };
+		77464CD21DE294550064DA2D /* JQCompose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77464CD11DE294550064DA2D /* JQCompose.swift */; };
 		775A71611DD80744007B8626 /* JQBaseTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71601DD80743007B8626 /* JQBaseTableController.swift */; };
 		775A71631DD80D84007B8626 /* JQVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71621DD80D84007B8626 /* JQVisitorView.swift */; };
 		775A71651DD80FFB007B8626 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71641DD80FFB007B8626 /* UILabel+Extension.swift */; };
@@ -79,6 +81,8 @@
 		77464CCA1DE204BC0064DA2D /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		77464CCB1DE204BC0064DA2D /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		77464CCD1DE20C420064DA2D /* JQComposeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQComposeButton.swift; sourceTree = "<group>"; };
+		77464CCF1DE293B80064DA2D /* compose.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = compose.plist; sourceTree = "<group>"; };
+		77464CD11DE294550064DA2D /* JQCompose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQCompose.swift; sourceTree = "<group>"; };
 		775A71601DD80743007B8626 /* JQBaseTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQBaseTableController.swift; sourceTree = "<group>"; };
 		775A71621DD80D84007B8626 /* JQVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQVisitorView.swift; sourceTree = "<group>"; };
 		775A71641DD80FFB007B8626 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				77CA30841DDC0F2C003E13FC /* JQStatus.swift */,
 				77CA30861DDC3483003E13FC /* JQStatusPictureInfo.swift */,
 				77CA30881DDC34C3003E13FC /* JQUser.swift */,
+				77464CD11DE294550064DA2D /* JQCompose.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 			children = (
 				77464CC71DE1F9B30064DA2D /* JQComposeView.swift */,
 				77464CCD1DE20C420064DA2D /* JQComposeButton.swift */,
+				77464CCF1DE293B80064DA2D /* compose.plist */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 				7700107C1DD621AB004281C9 /* SearchView.xib in Resources */,
 				77222D791DD406E000B29165 /* Assets.xcassets in Resources */,
 				77D143FB1DDE9F1400F8E14D /* JQRetweetedStatus.xib in Resources */,
+				77464CD01DE293B80064DA2D /* compose.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				775A724A1DD9B7E0007B8626 /* JQOAuthController.swift in Sources */,
+				77464CD21DE294550064DA2D /* JQCompose.swift in Sources */,
 				77CA30891DDC34C3003E13FC /* JQUser.swift in Sources */,
 				770010831DD6B74D004281C9 /* JQTempController.swift in Sources */,
 				77222DB41DD424D900B29165 /* JQMessageController.swift in Sources */,

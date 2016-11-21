@@ -24,7 +24,7 @@ extension NSAttributedString {
         let attText = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName : titleColor, NSFontAttributeName : UIFont.systemFont(ofSize: fontSize)])
         
         //空格富文本
-        let attSpace = NSAttributedString(string: "\n\n", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: fontSize)])
+        let attSpace = NSAttributedString(string: "\n\n", attributes: [NSFontAttributeName : UIFont.systemFont(ofSize: space)])
         
         //添加至可变数组
         let attM = NSMutableAttributedString()

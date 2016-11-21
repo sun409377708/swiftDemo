@@ -132,7 +132,9 @@ class JQStatusCell: UITableViewCell {
             //获取磁盘中的图片根据路径
             let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: urlString)
             
-            let imageSize = image!.size
+            guard let imageSize = image?.size else {
+                return CGSize.zero
+            }
             return CGSize(width: imageSize.width, height: imageSize.height)
         }
         
