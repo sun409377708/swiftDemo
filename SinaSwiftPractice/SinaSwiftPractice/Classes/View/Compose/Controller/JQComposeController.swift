@@ -8,22 +8,65 @@
 
 import UIKit
 
+enum JQComposeToolBarButtonType {
+    case Picture
+    case Mention
+    case Trend
+    case Emoticon
+    case Add
+}
+
 class JQComposeController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         
-        self.setupUI()
-        
-//        self.navigationController?.navigationBar.isTranslucent = false
+        self.setTextUI()
+        self.setNavUI()
+        self.setToolBarUI()
+        registerNotification()
     }
 
+    private func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+    }
+    
+    @objc private func keyboardWillChange(n: Notification) {
+    
+        let endFrame = (n.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        //改变toolBar的位置
+        let offSetY = endFrame.origin.y - ScreenHeight
+        
+        toolBar.snp.updateConstraints { (update) in
+            update.bottom.equalTo(offSetY)
+        }
+        
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
     @objc internal func back() {
         self.dismiss(animated: true, completion: nil)
     }
     
     @objc internal func sendBtnClick() {
+        
+    }
+    
+    @objc internal func typeButtonClick(button: UIButton) {
+        
+        print(button.tag)
+        switch button.tag {
+        case 0:
+            print("发布图片")
+        case 1:
+            print("发布表情")
+        default:
+            print("瞎点")
+        }
         
     }
     
@@ -56,6 +99,10 @@ class JQComposeController: UIViewController {
         textView.font = UIFont.systemFont(ofSize: 16)
         textView.delegate = self
         
+        //设置拖拽回退键盘
+        textView.keyboardDismissMode = .onDrag
+        textView.alwaysBounceVertical = true
+        
         return textView
     }()
     
@@ -63,6 +110,44 @@ class JQComposeController: UIViewController {
         
         let label = UILabel(title: "分享新鲜事...", textColor: UIColor.lightGray, fontSize: 14)
         return label
+    }()
+    
+    internal lazy var toolBar: UIToolbar = {
+        
+        let tool = UIToolbar()
+        
+        var itemArray = [UIBarButtonItem]()
+        
+        //添加五个按钮
+        let imageNames = ["compose_toolbar_picture",
+                          "compose_mentionbutton_background",
+                          "compose_trendbutton_background",
+                          "compose_emoticonbutton_background",
+                          "compose_add_background"]
+        
+        for  (i,value) in imageNames.enumerated() {
+            let btn = UIButton()
+            btn.setImage(UIImage(named:value), for: .normal)
+            btn.setImage(UIImage(named:value + "_highlighted"), for: .highlighted)
+            
+            btn.tag = i
+            btn.sizeToFit()
+            btn.addTarget(self, action: #selector(typeButtonClick), for: .touchUpInside)
+            
+            let item = UIBarButtonItem(customView: btn)
+            
+            itemArray.append(item)
+            
+            //添加弹簧
+            let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+            
+            itemArray.append(space)
+        }
+        
+        itemArray.removeLast()
+        tool.items = itemArray
+        
+        return tool
     }()
 
 }
@@ -76,13 +161,17 @@ extension JQComposeController: UITextViewDelegate {
         // 2. 设置占位文字
         self.placeHolderLabel.isHidden = textView.hasText
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        self.textView.resignFirstResponder()
+    }
 }
 
 //设置UI相关
 extension JQComposeController {
     
-    internal func setupUI() {
-        self.setNavUI()
+    internal func setTextUI() {
         
         view.addSubview(textView)
         
@@ -132,5 +221,15 @@ extension JQComposeController {
         self.navigationItem.titleView = label
     }
     
+    
+    internal func setToolBarUI() {
+        
+        view.addSubview(toolBar)
+        
+        toolBar.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalTo(self.view)
+        }
+        
+    }
 
 }
