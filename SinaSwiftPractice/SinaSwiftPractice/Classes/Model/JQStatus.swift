@@ -13,7 +13,7 @@ class JQStatus: NSObject, YYModel {
     
     //	微博ID
     // Int看机型  在32位的机型上面 会出错
-    var id: Int = 0
+    var id: Int64 = 0
     
     var text:String?
     

@@ -19,18 +19,43 @@ class JQHomeViewModel: NSObject {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
-        var parameter = ["access_token" : JQUserAccountViewModel.sharedModel.userAccount?.access_token ?? ""]
+        
+        var max_id: Int64 = 0
+        var since_id: Int64 = 0
         
         if isPullup {
-            //添加参数
-            let id = viewmodelArray.last?.status?.id ?? 0 //获取最后一条数据
-            parameter["max_id"] = "\(id - 1)"
+            //上拉加载, 取到数组中最后一个id
+            max_id = viewmodelArray.last?.status?.id ?? 0
+            
+            // 去除重复：若指定此参数，则返回ID小于或 “等于” max_id的微博，默认为0
+            if max_id != 0 {
+                max_id = max_id - 1
+            }
+            
         }else {
-            let id = viewmodelArray.first?.status?.id ?? 0 //获取第一条数据
-            parameter["since_id"] = "\(id)"
+            since_id = viewmodelArray.first?.status?.id ?? 0
         }
         
-        JQNetworkTools.sharedTools.request(method: .GET, urlString: urlString, parameter: parameter) { (responseObject, error) in
+        print("\(max_id)--\(since_id)")
+        let parameters = [
+            "access_token" :JQUserAccountViewModel.sharedModel.userAccount?.access_token ?? "",
+            "max_id" : "\(max_id)",
+            "since_id" : "\(since_id)"
+        ]
+        
+        //        var parameter = ["access_token" : JQUserAccountViewModel.sharedModel.userAccount?.access_token ?? ""]
+
+        
+//        if isPullup {
+//            //添加参数
+//            let id = viewmodelArray.last?.status?.id ?? 0 //获取最后一条数据
+//            parameter["max_id"] = "\(id - 1)"
+//        }else {
+//            let id = viewmodelArray.first?.status?.id ?? 0 //获取第一条数据
+//            parameter["since_id"] = "\(id)"
+//        }
+        
+        JQNetworkTools.sharedTools.request(method: .GET, urlString: urlString, parameter: parameters) { (responseObject, error) in
             
             if error != nil {
                 finished(false, 0)
