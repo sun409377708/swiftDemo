@@ -94,24 +94,17 @@ class JQComposeController: UIViewController {
             //上传图片
             urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
             
-            JQNetworkTools.sharedTools.post(urlString, parameters: params, constructingBodyWith: { (formData) in
+            let data = UIImagePNGRepresentation(pictureVC.images.last!)
+            
+            JQNetworkTools.sharedTools.upload(method: .POST, urlString: urlString, parameter: params, datas: ["pic": data!], finished: { (responseObject, error) in
                 
-                let imageData = UIImagePNGRepresentation(self.pictureVC.images.last!)
-                
-                formData.appendPart(withFileData: imageData!, name: "pic", fileName: "maoge", mimeType: "application/octet-stream")
-                
-            }, progress: nil, success: { (_, _) in
-                
+                if error != nil {
+                    SVProgressHUD.showError(withStatus: "发布微博失败,请检查网络")
+                    return
+                }
                 SVProgressHUD.showSuccess(withStatus: "发布图片微博成功,棒棒哒!")
-            }, failure: { (_, error) in
-                print(error)
-                SVProgressHUD.showError(withStatus: "发布微博失败,请检查网络")
-
             })
         }
-        
-  
-        
     }
     
     

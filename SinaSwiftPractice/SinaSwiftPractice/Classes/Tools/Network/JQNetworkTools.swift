@@ -48,4 +48,22 @@ class JQNetworkTools: AFHTTPSessionManager {
         }
         
     }
+    
+    //上传
+    func upload(method: HTTPMethod, urlString: String, parameter: Any?, datas: [String : Data], finished:@escaping (Any?, Error?) -> ()) {
+        
+        self.post(urlString, parameters: parameter, constructingBodyWith: { (formeData) in
+            
+            for (key, value) in datas {
+                formeData.appendPart(withFileData: value, name: key, fileName: "123.png", mimeType: "application/octet-stream")
+            }
+            
+        }, progress: nil, success: { (_, response) in
+            
+            finished(response, nil)
+        }, failure: { (_, error) in
+            
+            finished(nil, error)
+        })
+    }
 }
