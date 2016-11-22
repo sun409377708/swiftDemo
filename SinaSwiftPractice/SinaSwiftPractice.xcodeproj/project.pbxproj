@@ -29,6 +29,7 @@
 		77464CD01DE293B80064DA2D /* compose.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77464CCF1DE293B80064DA2D /* compose.plist */; };
 		77464CD21DE294550064DA2D /* JQCompose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77464CD11DE294550064DA2D /* JQCompose.swift */; };
 		77464CD41DE2C8030064DA2D /* JQComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77464CD31DE2C8030064DA2D /* JQComposeController.swift */; };
+		775779B41DE3DAD400B970C2 /* JQPictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775779B31DE3DAD400B970C2 /* JQPictureController.swift */; };
 		775A71611DD80744007B8626 /* JQBaseTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71601DD80743007B8626 /* JQBaseTableController.swift */; };
 		775A71631DD80D84007B8626 /* JQVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71621DD80D84007B8626 /* JQVisitorView.swift */; };
 		775A71651DD80FFB007B8626 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A71641DD80FFB007B8626 /* UILabel+Extension.swift */; };
@@ -85,6 +86,7 @@
 		77464CCF1DE293B80064DA2D /* compose.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = compose.plist; sourceTree = "<group>"; };
 		77464CD11DE294550064DA2D /* JQCompose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQCompose.swift; sourceTree = "<group>"; };
 		77464CD31DE2C8030064DA2D /* JQComposeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQComposeController.swift; sourceTree = "<group>"; };
+		775779B31DE3DAD400B970C2 /* JQPictureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQPictureController.swift; sourceTree = "<group>"; };
 		775A71601DD80743007B8626 /* JQBaseTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQBaseTableController.swift; sourceTree = "<group>"; };
 		775A71621DD80D84007B8626 /* JQVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQVisitorView.swift; sourceTree = "<group>"; };
 		775A71641DD80FFB007B8626 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				77464CD31DE2C8030064DA2D /* JQComposeController.swift */,
+				775779B31DE3DAD400B970C2 /* JQPictureController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				77222DAE1DD4248600B29165 /* JQTabBarController.swift in Sources */,
 				77CA30851DDC0F2C003E13FC /* JQStatus.swift in Sources */,
 				775A71631DD80D84007B8626 /* JQVisitorView.swift in Sources */,
+				775779B41DE3DAD400B970C2 /* JQPictureController.swift in Sources */,
 				770010781DD607D5004281C9 /* JQMainTabBar.swift in Sources */,
 				77D144011DDFFDC300F8E14D /* String+Extension.swift in Sources */,
 				77CA30901DDC401D003E13FC /* JQStatusCell.swift in Sources */,

@@ -8,11 +8,33 @@
 
 import UIKit
 
+let selectCellMargin: CGFloat = 4
+let colCount = 3
+
+let itemW = (ScreenWidth - (CGFloat(colCount) + 1) * selectCellMargin) / CGFloat(colCount)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    lazy var pictureVC: JQPictureController = {
+        
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.itemSize = CGSize(width: itemW, height: itemW)
+        
+        layout.minimumLineSpacing = selectCellMargin
+        layout.minimumInteritemSpacing = selectCellMargin
+        
+        layout.sectionInset = UIEdgeInsets(top: selectCellMargin, left: selectCellMargin, bottom: 0, right: selectCellMargin)
+        
+        let vc = JQPictureController(collectionViewLayout: layout)
+        
+        vc.collectionView?.backgroundColor = UIColor.orange
+        return vc
+    }()
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        let mainTab = UINavigationController(rootViewController: JQComposeController())
         
-        let mainTab = defaultController()
+        let mainTab = pictureVC //defaultController()
         
         window?.rootViewController = mainTab
         
