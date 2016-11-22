@@ -70,7 +70,7 @@ class JQComposeController: UIViewController {
     }
     
     @objc internal func sendBtnClick() {
-        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        var urlString = "https://api.weibo.com/2/statuses/update.json"
         
         //2, 参数
         let access_token = JQUserAccountViewModel.sharedModel.userAccount?.access_token ?? ""
@@ -78,18 +78,39 @@ class JQComposeController: UIViewController {
         
         let params = ["access_token" : access_token, "status" : text]
         
-        //发送请求
-        JQNetworkTools.sharedTools.request(method: .POST, urlString: urlString, parameter: params) { (_, error) in
-            
-            if error != nil {
+        if pictureVC.images.count == 0 {
+            //发送请求
+            JQNetworkTools.sharedTools.request(method: .POST, urlString: urlString, parameter: params) { (_, error) in
                 
-                SVProgressHUD.showError(withStatus: "发送失败")
-                return
+                if error != nil {
+                    SVProgressHUD.showError(withStatus: "发送失败")
+                    return
+                }
+                
+                SVProgressHUD.showSuccess(withStatus: "发布微博成功")
+                self.dismiss(animated: true, completion: nil)
             }
+        }else {
+            //上传图片
+            urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
             
-            SVProgressHUD.showSuccess(withStatus: "发布微博成功")
-            self.dismiss(animated: true, completion: nil)
+            JQNetworkTools.sharedTools.post(urlString, parameters: params, constructingBodyWith: { (formData) in
+                
+                let imageData = UIImagePNGRepresentation(self.pictureVC.images.last!)
+                
+                formData.appendPart(withFileData: imageData!, name: "pic", fileName: "maoge", mimeType: "application/octet-stream")
+                
+            }, progress: nil, success: { (_, _) in
+                
+                SVProgressHUD.showSuccess(withStatus: "发布图片微博成功,棒棒哒!")
+            }, failure: { (_, error) in
+                print(error)
+                SVProgressHUD.showError(withStatus: "发布微博失败,请检查网络")
+
+            })
         }
+        
+  
         
     }
     

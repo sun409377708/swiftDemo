@@ -38,9 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let mainTab = UINavigationController(rootViewController: JQComposeController())
+//        let mainTab = UINavigationController(rootViewController: JQComposeController())
         
-//        let mainTab = defaultController()
+        let mainTab = defaultController()
         
         window?.rootViewController = mainTab
         
