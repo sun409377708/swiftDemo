@@ -9,6 +9,8 @@
 import UIKit
 import SVProgressHUD
 
+
+
 enum JQComposeToolBarButtonType {
     case Picture
     case Mention
@@ -19,10 +21,14 @@ enum JQComposeToolBarButtonType {
 
 class JQComposeController: UIViewController {
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.textView.becomeFirstResponder()
+        //视图将要显示进行判断
+        if pictureVC.images.count != 0 {
+            //设置显示
+            pictureVC.view.isHidden = false 
+        }
     }
     
     override func viewDidLoad() {
@@ -32,9 +38,13 @@ class JQComposeController: UIViewController {
         self.setTextUI()
         self.setNavUI()
         self.setToolBarUI()
+        self.setPictureUI()
         registerNotification()
+        
+        view.bringSubview(toFront: toolBar)
     }
 
+    //MARK: - 监听键盘通知, 改变frame
     private func registerNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
@@ -83,12 +93,16 @@ class JQComposeController: UIViewController {
         
     }
     
+    
+    //MARK: - 点击表情按钮
     @objc internal func typeButtonClick(button: UIButton) {
         
         print(button.tag)
         switch button.tag {
         case 0:
             print("发布图片")
+            //这里调用图片选择控制器
+            pictureVC.userWillAddPic()
         case 1:
             print("发布表情")
         default:
@@ -139,6 +153,7 @@ class JQComposeController: UIViewController {
         return label
     }()
     
+    //MARK: - 懒加载toolBar
     internal lazy var toolBar: UIToolbar = {
         
         let tool = UIToolbar()
@@ -176,9 +191,28 @@ class JQComposeController: UIViewController {
         
         return tool
     }()
+    
+    //MARK: - 添加图片选择器
+    lazy var pictureVC: JQPictureController = {
+        
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.itemSize = CGSize(width: itemW, height: itemW)
+        
+        layout.minimumLineSpacing = selectCellMargin
+        layout.minimumInteritemSpacing = selectCellMargin
+        
+        layout.sectionInset = UIEdgeInsets(top: selectCellMargin, left: selectCellMargin, bottom: 0, right: selectCellMargin)
+        
+        let vc = JQPictureController(collectionViewLayout: layout)
+        
+        vc.collectionView?.backgroundColor = UIColor.orange
+        return vc
+    }()
 
 }
 
+//MARK: - TEXTView代理方法
 extension JQComposeController: UITextViewDelegate {
 
     func textViewDidChange(_ textView: UITextView) {
@@ -195,8 +229,25 @@ extension JQComposeController: UITextViewDelegate {
     }
 }
 
-//设置UI相关
+//MARK: - 设置UI相关
 extension JQComposeController {
+    
+    internal func setPictureUI() {
+        
+        addChildViewController(pictureVC)
+        
+        view.addSubview(pictureVC.view)
+        
+        pictureVC.didMove(toParentViewController: self)
+        
+        pictureVC.view.snp.makeConstraints { (make) in
+            make.bottom.left.right.equalTo(self.view)
+            make.height.equalTo((ScreenHeight / 3) * 2)
+        }
+        
+        //默认隐藏
+        pictureVC.view.isHidden = true
+    }
     
     internal func setTextUI() {
         

@@ -11,6 +11,10 @@ import SVProgressHUD
 
 private let maxImageCount = 3
 
+let selectCellMargin: CGFloat = 4
+let colCount = 3
+
+let itemW = (ScreenWidth - (CGFloat(colCount) + 1) * selectCellMargin) / CGFloat(colCount)
 
 private let reuseIdentifier = "Cell"
 
@@ -163,8 +167,12 @@ extension JQPictureController: JQPictureSelCellDelegate {
         let indexPath = collectionView?.indexPath(for: cell)
         
         self.images.remove(at: indexPath!.item)
+    
+        //删除时, 如果是最后一张, 则直接影藏
+        self.view?.isHidden = images.count == 0
         
         self.collectionView?.reloadData()
+
     }
 }
 

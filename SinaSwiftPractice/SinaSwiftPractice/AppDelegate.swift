@@ -8,11 +8,6 @@
 
 import UIKit
 
-let selectCellMargin: CGFloat = 4
-let colCount = 3
-
-let itemW = (ScreenWidth - (CGFloat(colCount) + 1) * selectCellMargin) / CGFloat(colCount)
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -43,9 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-//        let mainTab = UINavigationController(rootViewController: JQComposeController())
+        let mainTab = UINavigationController(rootViewController: JQComposeController())
         
-        let mainTab = pictureVC //defaultController()
+//        let mainTab = defaultController()
         
         window?.rootViewController = mainTab
         
