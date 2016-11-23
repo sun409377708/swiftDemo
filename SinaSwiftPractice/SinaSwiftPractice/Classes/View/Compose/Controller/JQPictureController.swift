@@ -172,7 +172,6 @@ extension JQPictureController: JQPictureSelCellDelegate {
         self.view?.isHidden = images.count == 0
         
         self.collectionView?.reloadData()
-
     }
 }
 

@@ -23,6 +23,7 @@
 		77222DB61DD424EA00B29165 /* JQDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB51DD424EA00B29165 /* JQDiscoverController.swift */; };
 		77222DB81DD424FB00B29165 /* JQProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB71DD424FB00B29165 /* JQProfileController.swift */; };
 		77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB91DD4277200B29165 /* JQHomeController.swift */; };
+		77439AC31DE44256005D716E /* JQEmotionKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77439AC21DE44256005D716E /* JQEmotionKeyboardView.swift */; };
 		77464CC81DE1F9B30064DA2D /* JQComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77464CC71DE1F9B30064DA2D /* JQComposeView.swift */; };
 		77464CCC1DE204BC0064DA2D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 77464CCB1DE204BC0064DA2D /* UIImage+ImageEffects.m */; };
 		77464CCE1DE20C420064DA2D /* JQComposeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77464CCD1DE20C420064DA2D /* JQComposeButton.swift */; };
@@ -79,6 +80,7 @@
 		77222DB51DD424EA00B29165 /* JQDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQDiscoverController.swift; sourceTree = "<group>"; };
 		77222DB71DD424FB00B29165 /* JQProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQProfileController.swift; sourceTree = "<group>"; };
 		77222DB91DD4277200B29165 /* JQHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQHomeController.swift; sourceTree = "<group>"; };
+		77439AC21DE44256005D716E /* JQEmotionKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQEmotionKeyboardView.swift; sourceTree = "<group>"; };
 		77464CC71DE1F9B30064DA2D /* JQComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQComposeView.swift; sourceTree = "<group>"; };
 		77464CCA1DE204BC0064DA2D /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		77464CCB1DE204BC0064DA2D /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
@@ -384,6 +386,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		77439AC11DE44239005D716E /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				77439AC21DE44256005D716E /* JQEmotionKeyboardView.swift */,
+			);
+			path = Emotion;
+			sourceTree = "<group>";
+		};
 		77464CC41DE1F9780064DA2D /* Compose */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +415,7 @@
 		77464CC61DE1F9780064DA2D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				77439AC11DE44239005D716E /* Emotion */,
 				77464CC71DE1F9B30064DA2D /* JQComposeView.swift */,
 				77464CCD1DE20C420064DA2D /* JQComposeButton.swift */,
 				77464CCF1DE293B80064DA2D /* compose.plist */,
@@ -577,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77439AC31DE44256005D716E /* JQEmotionKeyboardView.swift in Sources */,
 				775A724A1DD9B7E0007B8626 /* JQOAuthController.swift in Sources */,
 				77464CD21DE294550064DA2D /* JQCompose.swift in Sources */,
 				77CA30891DDC34C3003E13FC /* JQUser.swift in Sources */,

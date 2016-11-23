@@ -117,13 +117,35 @@ class JQComposeController: UIViewController {
             print("发布图片")
             //这里调用图片选择控制器
             pictureVC.userWillAddPic()
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print(self.pictureVC.images.count)
         case 1:
+            print("@某人")
+        case 2:
+            print("发布话题")
+        case 3:
             print("发布表情")
+            
+            if !textView.isFirstResponder {
+                textView.becomeFirstResponder()
+            }
+            //切换键盘
+            textView.inputView = (textView.inputView == nil ? keyboardView : nil)
+            textView.reloadInputViews()
+            
+        case 4:
+            print("更多")
         default:
             print("瞎点")
         }
         
     }
+    
+    //表情键盘view
+    internal lazy var keyboardView: JQEmotionKeyboardView = {
+        let v = JQEmotionKeyboardView(frame: CGRect(x: 0, y: 0, width: 0, height: 220))
+        return v
+    }()
     
     internal lazy var sendBtn: UIBarButtonItem = {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 35))
