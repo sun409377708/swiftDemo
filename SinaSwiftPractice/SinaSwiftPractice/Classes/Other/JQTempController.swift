@@ -10,12 +10,30 @@ import UIKit
 
 class JQTempController: UIViewController {
 
+    
+    private lazy var webView = UIWebView()
+    
+    var URLString:String?
+    
+    override func loadView() {
+        view = webView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.white
-        
         self.navigationController?.view.backgroundColor = UIColor.white
+        
+        if let url = URL(string: URLString ?? "") {
+            
+            let request = URLRequest(url: url)
+            
+            webView.loadRequest(request)
+        }
+        
+
+        
+//        view.backgroundColor = UIColor.white
         
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", imageName: "navigationbar_back_withtext", target: self, action: #selector(popBack))
         

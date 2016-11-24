@@ -7,6 +7,16 @@
 //
 
 import UIKit
+import YYText
+
+//表情正则表达式对象
+let emoticonRegex = try! NSRegularExpression(pattern: "\\[.*?\\]", options: [])
+//话题
+let topicRegex = try! NSRegularExpression(pattern: "#.*?#", options: [])
+//@某人
+let atSomeOneRegex = try! NSRegularExpression(pattern: "@\\w+", options: [])
+//url
+let urlRegex = try! NSRegularExpression(pattern: "[a-zA-z]+://[^\\s]*", options: [])
 
 class JQStatusViewModel: NSObject {
 
@@ -66,11 +76,7 @@ class JQStatusViewModel: NSObject {
 
         //1. 根据正则表达式截取内容 -> 查找表情, 所以是[.*?], 因为[]在正则表达式中表示
         // 只占一位, 所以需要进行转译 \[ \]
-        let pattern = "\\[.*?\\]"
-        
-        let regex = try! NSRegularExpression(pattern: pattern, options: [])
-        
-        let matchResults = regex.matches(in: status, options: [], range: NSRange(location: 0, length: status.characters.count))
+        let matchResults = emoticonRegex.matches(in: status, options: [], range: NSRange(location: 0, length: status.characters.count))
         
         //2. 倒叙遍历数组
         for result in matchResults.reversed() {
@@ -96,28 +102,33 @@ class JQStatusViewModel: NSObject {
                 strM.replaceCharacters(in: range, with: imageText)
             }
         }
-        addHighLighted(strM: strM)
+        addHighLighted(regex: topicRegex, strM: strM)
+        addHighLighted(regex: atSomeOneRegex, strM: strM)
+        addHighLighted(regex: urlRegex, strM: strM)
+        
         return strM
     }
     
-    private func addHighLighted(strM: NSMutableAttributedString) {
+    
+    private func addHighLighted(regex: NSRegularExpression, strM: NSMutableAttributedString) {
         
         // 1. 拿到富文本中的字符串进行检索
         let text = strM.string
-        
         // 2. 正则截取
-        
-        let pattern = "#.*?#"
-        
-        let regex = try! NSRegularExpression(pattern: pattern, options: [])
-        
         let matchResult = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.characters.count))
         
         for result in matchResult {
-            
             let range = result.rangeAt(0)
-            
             strM.addAttributes([NSForegroundColorAttributeName : UIColor.purple], range: range)
+            
+            // 3. 设置文本点击高亮
+            let border = YYTextBorder.init(fill: UIColor.darkGray, cornerRadius: 3)
+//            border.insets = UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 0)
+            let highLighted = YYTextHighlight()
+            
+            highLighted.setColor(UIColor.green)
+            highLighted.setBackgroundBorder(border)
+            strM.yy_setTextHighlight(highLighted, range: range)
         }
     }
     

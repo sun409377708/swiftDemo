@@ -23,4 +23,19 @@ extension UIView {
 //            return layer.cornerRadius
 //        }
 //    }
+    
+    func navController() -> UINavigationController? {
+        //寻找下一个响应者 - 通过响应者链
+        var nextRes = self.next
+        
+        while nextRes != nil {
+            if let responder = nextRes as? UINavigationController {
+                return responder
+            }
+            
+            //如果不是就继续遍历
+            nextRes = nextRes?.next
+        }
+        return nil
+    }
 }

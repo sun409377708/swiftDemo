@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import YYText
+import SVProgressHUD
 
 let commonMargin: CGFloat = 8
 
@@ -87,6 +88,20 @@ class JQStatusCell: UITableViewCell {
             commentBtn.setTitle(viewmodel?.comment_text, for: .normal)
             repostBtn.setTitle(viewmodel?.repost_text, for: .normal)
             ohYeahBtn.setTitle(viewmodel?.ohYeah_text, for: .normal)
+            
+            //高亮文本点击响应
+            contentLabel.highlightTapAction = {(containerView, text, range, rect)  in
+                
+                let subStr = (text.string as NSString).substring(with: range)
+                SVProgressHUD.showInfo(withStatus: subStr)
+                
+                if subStr.contains("http") {
+                    
+                    let temp = JQTempController()
+                    temp.URLString = subStr
+                    self.navController()?.pushViewController(temp, animated: true)
+                }
+            }
             
         }
     }
