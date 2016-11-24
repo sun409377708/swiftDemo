@@ -10,6 +10,9 @@ import UIKit
 
 class JQStatusViewModel: NSObject {
 
+    //富文本属性
+    var originalAttributeString: NSAttributedString?
+    
     var avatarImage:UIImage?
     var memberImage:UIImage?
     var iconURL:URL?
@@ -45,6 +48,15 @@ class JQStatusViewModel: NSObject {
             comment_text = dealToolBarText(count: status?.comments_count ?? 0, defaultText: "评论")
             ohYeah_text = dealToolBarText(count: status?.attitudes_count ?? 0, defaultText: "赞")
             repost_text = dealToolBarText(count: status?.reposts_count ?? 0, defaultText: "转发")
+            
+            //处理文字富文本属性
+            let strM = NSMutableAttributedString(string: status?.text ?? "")
+            
+            let font = UIFont.systemFont(ofSize: 12)
+            strM.addAttributes([NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.orange], range: NSMakeRange(0, strM.length))
+            
+            originalAttributeString = strM
+            
         }
     }
     

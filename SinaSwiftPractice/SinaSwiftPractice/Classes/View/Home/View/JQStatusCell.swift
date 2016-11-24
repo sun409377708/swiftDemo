@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import YYText
 
 let commonMargin: CGFloat = 8
 
@@ -31,7 +32,7 @@ class JQStatusCell: UITableViewCell {
     
     @IBOutlet weak var sourceLabel: UILabel!
     
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: YYLabel!
     
     @IBOutlet weak var avatarImage: UIImageView!
     
@@ -63,11 +64,10 @@ class JQStatusCell: UITableViewCell {
             memberImage.image = viewmodel?.memberImage
             avatarImage.image = viewmodel?.avatarImage
             nameLabel.text = viewmodel?.status?.user?.name
-//            timeLabel.text = viewmodel?.status?.created_at
             timeLabel.text = viewmodel?.dateString
-//            sourceLabel.text = viewmodel?.status?.source
             sourceLabel.text = viewmodel?.sourceText
-            contentLabel.text = viewmodel?.status?.text
+//            contentLabel.text = viewmodel?.status?.text
+            contentLabel.attributedText = viewmodel?.originalAttributeString
             
             //计算配图视图大小
             let count = viewmodel?.pictureInfos?.count ?? 0
@@ -109,6 +109,9 @@ class JQStatusCell: UITableViewCell {
 
         contentLabel.preferredMaxLayoutWidth = ScreenWidth - 2 * commonMargin
         retweetedText?.preferredMaxLayoutWidth =  ScreenWidth - 2 * commonMargin
+        contentLabel.numberOfLines = 0
+        retweetedText?.numberOfLines = 0
+        
         //设置配图视图流水布局
 //        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         
