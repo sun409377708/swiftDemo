@@ -47,6 +47,27 @@ class JQComposeController: UIViewController {
     //MARK: - 监听键盘通知, 改变frame
     private func registerNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(selectEmoticon(n:)), name: NSNotification.Name(KSelectEmoticon), object: nil)
+        
+    }
+    
+    @objc private func selectEmoticon(n: Notification) {
+        
+        guard let em = n.object as? HMEmoticon else {
+            //执行删除
+            textView.deleteBackward()
+            return
+        }
+        
+        //emoji
+        if em.type == 1 {
+            textView.replace(textView.selectedTextRange!, withText: em.emojiStr ?? "")
+            return
+        }
+        
+        //处理图片
+        textView.inputEmoticon(em: em)
     }
     
     @objc private func keyboardWillChange(n: Notification) {
@@ -74,7 +95,7 @@ class JQComposeController: UIViewController {
         
         //2, 参数
         let access_token = JQUserAccountViewModel.sharedModel.userAccount?.access_token ?? ""
-        let text = textView.text ?? ""
+        let text = textView.imageEmoticon2Chs() 
         
         let params = ["access_token" : access_token, "status" : text]
         
@@ -142,8 +163,8 @@ class JQComposeController: UIViewController {
     }
     
     //表情键盘view
-    internal lazy var keyboardView: JQEmotionKeyboardView = {
-        let v = JQEmotionKeyboardView(frame: CGRect(x: 0, y: 0, width: 0, height: 220))
+    internal lazy var keyboardView: HMEmoticonKeyboardView = {
+        let v = HMEmoticonKeyboardView(frame: CGRect(x: 0, y: 0, width: 0, height: 220))
         return v
     }()
     
@@ -167,9 +188,9 @@ class JQComposeController: UIViewController {
         return barButtonItem
     }()
     
-    internal lazy var textView:UITextView = {
+    internal lazy var textView:HMEmoticonTextView = {
         
-        let textView = UITextView()
+        let textView = HMEmoticonTextView()
         
         textView.backgroundColor = UIColor.brown
         textView.textColor = UIColor.darkGray

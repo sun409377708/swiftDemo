@@ -4,3 +4,4 @@
 
 #import <CommonCrypto/CommonDigest.h>
 #import "UIImage+ImageEffects.h"
+#import "NSString+HMEmoji.h"

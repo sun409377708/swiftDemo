@@ -55,11 +55,13 @@ class JQHomeController: JQBaseTableController {
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         
-        //加载数据
-        loadData()
+       
         
         //设置tableView
         setTableView()
+        
+        //加载数据
+        loadData()
         
         //添加提示Label
         tipLabel.frame.origin.y = navBarHeight - tipLabelMargin

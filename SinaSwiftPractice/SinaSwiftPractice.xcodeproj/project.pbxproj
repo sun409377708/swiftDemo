@@ -23,6 +23,19 @@
 		77222DB61DD424EA00B29165 /* JQDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB51DD424EA00B29165 /* JQDiscoverController.swift */; };
 		77222DB81DD424FB00B29165 /* JQProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB71DD424FB00B29165 /* JQProfileController.swift */; };
 		77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77222DB91DD4277200B29165 /* JQHomeController.swift */; };
+		7741BDDD1DE68486008201FC /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7741BDCE1DE68486008201FC /* Emoticons.bundle */; };
+		7741BDDE1DE68486008201FC /* HMEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741BDCF1DE68486008201FC /* HMEmoticon.swift */; };
+		7741BDDF1DE68486008201FC /* HMEmoticonButtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741BDD01DE68486008201FC /* HMEmoticonButtton.swift */; };
+		7741BDE01DE68486008201FC /* HMEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741BDD11DE68486008201FC /* HMEmoticonCell.swift */; };
+		7741BDE11DE68486008201FC /* HMEmoticonKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741BDD21DE68486008201FC /* HMEmoticonKeyboardView.swift */; };
+		7741BDE21DE68486008201FC /* HMEmoticonPopoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741BDD31DE68486008201FC /* HMEmoticonPopoView.swift */; };
+		7741BDE31DE68486008201FC /* HMEmoticonPopoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7741BDD41DE68486008201FC /* HMEmoticonPopoView.xib */; };
+		7741BDE41DE68486008201FC /* HMEmoticonTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741BDD51DE68486008201FC /* HMEmoticonTextView.swift */; };
+		7741BDE51DE68486008201FC /* HMEmoticonToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741BDD61DE68486008201FC /* HMEmoticonToolBar.swift */; };
+		7741BDE61DE68486008201FC /* HMEmoticonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741BDD71DE68486008201FC /* HMEmoticonTools.swift */; };
+		7741BDE71DE68486008201FC /* HMTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7741BDD81DE68486008201FC /* HMTextAttachment.swift */; };
+		7741BDE81DE68486008201FC /* KeyboadBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7741BDD91DE68486008201FC /* KeyboadBundle.bundle */; };
+		7741BDE91DE68486008201FC /* NSString+HMEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 7741BDDC1DE68486008201FC /* NSString+HMEmoji.m */; };
 		77439AC31DE44256005D716E /* JQEmotionKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77439AC21DE44256005D716E /* JQEmotionKeyboardView.swift */; };
 		77464CC81DE1F9B30064DA2D /* JQComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77464CC71DE1F9B30064DA2D /* JQComposeView.swift */; };
 		77464CCC1DE204BC0064DA2D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 77464CCB1DE204BC0064DA2D /* UIImage+ImageEffects.m */; };
@@ -80,6 +93,20 @@
 		77222DB51DD424EA00B29165 /* JQDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQDiscoverController.swift; sourceTree = "<group>"; };
 		77222DB71DD424FB00B29165 /* JQProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQProfileController.swift; sourceTree = "<group>"; };
 		77222DB91DD4277200B29165 /* JQHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQHomeController.swift; sourceTree = "<group>"; };
+		7741BDCE1DE68486008201FC /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		7741BDCF1DE68486008201FC /* HMEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMEmoticon.swift; sourceTree = "<group>"; };
+		7741BDD01DE68486008201FC /* HMEmoticonButtton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMEmoticonButtton.swift; sourceTree = "<group>"; };
+		7741BDD11DE68486008201FC /* HMEmoticonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMEmoticonCell.swift; sourceTree = "<group>"; };
+		7741BDD21DE68486008201FC /* HMEmoticonKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMEmoticonKeyboardView.swift; sourceTree = "<group>"; };
+		7741BDD31DE68486008201FC /* HMEmoticonPopoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMEmoticonPopoView.swift; sourceTree = "<group>"; };
+		7741BDD41DE68486008201FC /* HMEmoticonPopoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMEmoticonPopoView.xib; sourceTree = "<group>"; };
+		7741BDD51DE68486008201FC /* HMEmoticonTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMEmoticonTextView.swift; sourceTree = "<group>"; };
+		7741BDD61DE68486008201FC /* HMEmoticonToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMEmoticonToolBar.swift; sourceTree = "<group>"; };
+		7741BDD71DE68486008201FC /* HMEmoticonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMEmoticonTools.swift; sourceTree = "<group>"; };
+		7741BDD81DE68486008201FC /* HMTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMTextAttachment.swift; sourceTree = "<group>"; };
+		7741BDD91DE68486008201FC /* KeyboadBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KeyboadBundle.bundle; sourceTree = "<group>"; };
+		7741BDDB1DE68486008201FC /* NSString+HMEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HMEmoji.h"; sourceTree = "<group>"; };
+		7741BDDC1DE68486008201FC /* NSString+HMEmoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HMEmoji.m"; sourceTree = "<group>"; };
 		77439AC21DE44256005D716E /* JQEmotionKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQEmotionKeyboardView.swift; sourceTree = "<group>"; };
 		77464CC71DE1F9B30064DA2D /* JQComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQComposeView.swift; sourceTree = "<group>"; };
 		77464CCA1DE204BC0064DA2D /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -223,6 +250,8 @@
 		77222D861DD40C3600B29165 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7741BDCD1DE68486008201FC /* EmoticonKeyboard(完整版) */,
+				7741BDDA1DE68486008201FC /* NSStringEmoji */,
 				77464CC91DE204BC0064DA2D /* UIImage+Effects */,
 				775A724B1DD9BA82007B8626 /* Network */,
 				7700107F1DD6B3B2004281C9 /* Extension */,
@@ -386,6 +415,34 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		7741BDCD1DE68486008201FC /* EmoticonKeyboard(完整版) */ = {
+			isa = PBXGroup;
+			children = (
+				7741BDCE1DE68486008201FC /* Emoticons.bundle */,
+				7741BDCF1DE68486008201FC /* HMEmoticon.swift */,
+				7741BDD01DE68486008201FC /* HMEmoticonButtton.swift */,
+				7741BDD11DE68486008201FC /* HMEmoticonCell.swift */,
+				7741BDD21DE68486008201FC /* HMEmoticonKeyboardView.swift */,
+				7741BDD31DE68486008201FC /* HMEmoticonPopoView.swift */,
+				7741BDD41DE68486008201FC /* HMEmoticonPopoView.xib */,
+				7741BDD51DE68486008201FC /* HMEmoticonTextView.swift */,
+				7741BDD61DE68486008201FC /* HMEmoticonToolBar.swift */,
+				7741BDD71DE68486008201FC /* HMEmoticonTools.swift */,
+				7741BDD81DE68486008201FC /* HMTextAttachment.swift */,
+				7741BDD91DE68486008201FC /* KeyboadBundle.bundle */,
+			);
+			path = "EmoticonKeyboard(完整版)";
+			sourceTree = "<group>";
+		};
+		7741BDDA1DE68486008201FC /* NSStringEmoji */ = {
+			isa = PBXGroup;
+			children = (
+				7741BDDB1DE68486008201FC /* NSString+HMEmoji.h */,
+				7741BDDC1DE68486008201FC /* NSString+HMEmoji.m */,
+			);
+			path = NSStringEmoji;
+			sourceTree = "<group>";
+		};
 		77439AC11DE44239005D716E /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,9 +552,8 @@
 				TargetAttributes = {
 					77222D6D1DD406E000B29165 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 47LF34TNU8;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -526,10 +582,13 @@
 			files = (
 				77CA30911DDC401D003E13FC /* JQStatusCell.xib in Resources */,
 				770010A81DD6F866004281C9 /* SearchTextView.xib in Resources */,
+				7741BDE81DE68486008201FC /* KeyboadBundle.bundle in Resources */,
 				7700107C1DD621AB004281C9 /* SearchView.xib in Resources */,
+				7741BDE31DE68486008201FC /* HMEmoticonPopoView.xib in Resources */,
 				77222D791DD406E000B29165 /* Assets.xcassets in Resources */,
 				77D143FB1DDE9F1400F8E14D /* JQRetweetedStatus.xib in Resources */,
 				77464CD01DE293B80064DA2D /* compose.plist in Resources */,
+				7741BDDD1DE68486008201FC /* Emoticons.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,12 +649,16 @@
 			files = (
 				77439AC31DE44256005D716E /* JQEmotionKeyboardView.swift in Sources */,
 				775A724A1DD9B7E0007B8626 /* JQOAuthController.swift in Sources */,
+				7741BDE71DE68486008201FC /* HMTextAttachment.swift in Sources */,
 				77464CD21DE294550064DA2D /* JQCompose.swift in Sources */,
+				7741BDE01DE68486008201FC /* HMEmoticonCell.swift in Sources */,
 				77CA30891DDC34C3003E13FC /* JQUser.swift in Sources */,
 				770010831DD6B74D004281C9 /* JQTempController.swift in Sources */,
+				7741BDE11DE68486008201FC /* HMEmoticonKeyboardView.swift in Sources */,
 				77222DB41DD424D900B29165 /* JQMessageController.swift in Sources */,
 				77464CD41DE2C8030064DA2D /* JQComposeController.swift in Sources */,
 				775A72671DDAA9BF007B8626 /* UIColor+Extension.swift in Sources */,
+				7741BDDE1DE68486008201FC /* HMEmoticon.swift in Sources */,
 				77464CCE1DE20C420064DA2D /* JQComposeButton.swift in Sources */,
 				7700107E1DD622CC004281C9 /* JQSearchView.swift in Sources */,
 				775A72471DD9A61E007B8626 /* UIImage+Extension.swift in Sources */,
@@ -617,17 +680,23 @@
 				775A72551DDA1413007B8626 /* JQNetworkTools.swift in Sources */,
 				775A72691DDAC430007B8626 /* JQUserAccountViewModel.swift in Sources */,
 				775A71651DD80FFB007B8626 /* UILabel+Extension.swift in Sources */,
+				7741BDE61DE68486008201FC /* HMEmoticonTools.swift in Sources */,
 				775A71611DD80744007B8626 /* JQBaseTableController.swift in Sources */,
 				775A72571DDA1F08007B8626 /* JQUserAccount.swift in Sources */,
 				77CA308B1DDC3592003E13FC /* JQHomeViewModel.swift in Sources */,
+				7741BDE91DE68486008201FC /* NSString+HMEmoji.m in Sources */,
 				77222DBA1DD4277200B29165 /* JQHomeController.swift in Sources */,
 				77464CC81DE1F9B30064DA2D /* JQComposeView.swift in Sources */,
 				77CA30931DDCBBF3003E13FC /* JQPictureView.swift in Sources */,
+				7741BDE41DE68486008201FC /* HMEmoticonTextView.swift in Sources */,
 				770010A61DD6F855004281C9 /* JQSearchTextView.swift in Sources */,
 				77222DAE1DD4248600B29165 /* JQTabBarController.swift in Sources */,
+				7741BDE21DE68486008201FC /* HMEmoticonPopoView.swift in Sources */,
+				7741BDE51DE68486008201FC /* HMEmoticonToolBar.swift in Sources */,
 				77CA30851DDC0F2C003E13FC /* JQStatus.swift in Sources */,
 				775A71631DD80D84007B8626 /* JQVisitorView.swift in Sources */,
 				775779B41DE3DAD400B970C2 /* JQPictureController.swift in Sources */,
+				7741BDDF1DE68486008201FC /* HMEmoticonButtton.swift in Sources */,
 				770010781DD607D5004281C9 /* JQMainTabBar.swift in Sources */,
 				77D144011DDFFDC300F8E14D /* String+Extension.swift in Sources */,
 				77CA30901DDC401D003E13FC /* JQStatusCell.swift in Sources */,
@@ -738,11 +807,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 47LF34TNU8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SinaSwiftPractice/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iOS.AliyPay;
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.sinaPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SinaSwiftPractice/Classes/Tools/Extension/SinaSwiftPractice-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -757,11 +826,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 47LF34TNU8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SinaSwiftPractice/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = iOS.AliyPay;
+				PRODUCT_BUNDLE_IDENTIFIER = iOS.sinaPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SinaSwiftPractice/Classes/Tools/Extension/SinaSwiftPractice-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
