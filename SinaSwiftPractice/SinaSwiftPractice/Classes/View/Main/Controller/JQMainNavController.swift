@@ -9,11 +9,24 @@
 
 import UIKit
 
-class JQMainNavController: UINavigationController {
+class JQMainNavController: UINavigationController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //解决跳转控制器后, 导航控制器侧滑手势失效
+        self.interactivePopGestureRecognizer?.delegate = self
+        
+    }
+    //此时会引起另一个问题, 就是当你将代理设置为当前控制器后, 根控制器也会有侧滑手势
+    //所以需要判断如果是根控制器, 手势就失效
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        //根控制器
+        if childViewControllers.count == 1 {
+            return false
+        }
+        return true
     }
     
     //重写系统方法
