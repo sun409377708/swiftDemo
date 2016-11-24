@@ -50,13 +50,74 @@ class JQStatusViewModel: NSObject {
             repost_text = dealToolBarText(count: status?.reposts_count ?? 0, defaultText: "转发")
             
             //处理文字富文本属性
-            let strM = NSMutableAttributedString(string: status?.text ?? "")
+//            let strM = NSMutableAttributedString(string: status?.text ?? "")
+//            
+//            let font = UIFont.systemFont(ofSize: 12)
+//            strM.addAttributes([NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.orange], range: NSMakeRange(0, strM.length))
             
-            let font = UIFont.systemFont(ofSize: 12)
-            strM.addAttributes([NSFontAttributeName : font, NSForegroundColorAttributeName : UIColor.orange], range: NSMakeRange(0, strM.length))
+            originalAttributeString = dealStatueText(status: status?.text ?? "")
             
-            originalAttributeString = strM
+        }
+    }
+    
+    private func dealStatueText(status: String) -> NSAttributedString {
+        
+        let strM = NSMutableAttributedString(string: status)
+
+        //1. 根据正则表达式截取内容 -> 查找表情, 所以是[.*?], 因为[]在正则表达式中表示
+        // 只占一位, 所以需要进行转译 \[ \]
+        let pattern = "\\[.*?\\]"
+        
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        
+        let matchResults = regex.matches(in: status, options: [], range: NSRange(location: 0, length: status.characters.count))
+        
+        //2. 倒叙遍历数组
+        for result in matchResults.reversed() {
+            let range = result.rangeAt(0)
             
+            let subStr = (status as NSString).substring(with: range)
+            
+            let font = UIFont.systemFont(ofSize: 15)
+            let lineHeight = font.lineHeight
+            
+            // 3. 根据表情字符串 在EmotionTools 查找对于的模型
+            if let em = HMEmoticonTools.sharedEmoticonTools.findEmoticon(chs: subStr) {
+             
+                let bundle = HMEmoticonTools.sharedEmoticonTools.emoticonBundle
+                
+                // 4. 模型中找图片对象
+                let image = UIImage(named: em.imagePath!, in: bundle, compatibleWith: nil)
+                
+                // 5. 将图片包装成属性字符串
+                let imageText = NSMutableAttributedString.yy_attachmentString(withContent: image, contentMode: .scaleAspectFill, attachmentSize: CGSize(width: lineHeight, height: lineHeight), alignTo: font, alignment: .center)
+
+                // 6. 将图片属性字符串转到strM中
+                strM.replaceCharacters(in: range, with: imageText)
+            }
+        }
+        addHighLighted(strM: strM)
+        return strM
+    }
+    
+    private func addHighLighted(strM: NSMutableAttributedString) {
+        
+        // 1. 拿到富文本中的字符串进行检索
+        let text = strM.string
+        
+        // 2. 正则截取
+        
+        let pattern = "#.*?#"
+        
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        
+        let matchResult = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.characters.count))
+        
+        for result in matchResult {
+            
+            let range = result.rangeAt(0)
+            
+            strM.addAttributes([NSForegroundColorAttributeName : UIColor.purple], range: range)
         }
     }
     
