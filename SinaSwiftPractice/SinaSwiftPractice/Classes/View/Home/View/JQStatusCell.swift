@@ -20,7 +20,7 @@ private let pictureCellMargin: CGFloat = 3
 private let maxWidth =  ScreenWidth - 2 * commonMargin
 private let itemWidth = (maxWidth - 2 * pictureCellMargin) / 3
 
-
+private var isFirst = true
 class JQStatusCell: UITableViewCell {
 
     @IBOutlet weak var iconView: UIImageView!
@@ -76,11 +76,15 @@ class JQStatusCell: UITableViewCell {
             
             pictureViewWidthCons.constant = size.width
             pictureViewHeightCons.constant = size.height
-    
+            
             flowLayout.itemSize = count == 1 ? size : CGSize(width: itemWidth, height: itemWidth)
             
             //传递数据给配图视图
             pictureView.pictureInfo = viewmodel?.pictureInfos
+            if !isFirst {
+                isFirst = false
+            }
+            
             retweetedText?.text = viewmodel?.status?.retweeted_status?.text
             //根据是否有配图调整顶部间距
             pictureViewTopCons.constant = (count == 0 ? 0 : commonMargin)
@@ -102,7 +106,6 @@ class JQStatusCell: UITableViewCell {
                     self.navController()?.pushViewController(temp, animated: true)
                 }
             }
-            
         }
     }
     

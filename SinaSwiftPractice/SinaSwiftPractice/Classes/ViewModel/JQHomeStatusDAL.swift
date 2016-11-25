@@ -19,7 +19,7 @@ class JQHomeStatusDAL: NSObject {
         }
         // 3. 如果没有本地缓存 则进行网络请求, 然后交给则将数据给viewmodel
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        var parameters = ["access_token" :JQUserAccountViewModel.sharedModel.userAccount?.access_token ?? ""]
+        var parameters = ["access_token" :JQUserAccountViewModel.sharedModel.userAccount?.access_token ?? "", "count" : "100"]
         
         if since_id > 0 {
             parameters["since_id"] = "\(since_id)"
@@ -91,7 +91,7 @@ class JQHomeStatusDAL: NSObject {
                 
                 let dict = try! JSONSerialization.jsonObject( with: jsonData, options: []) as! [String : Any]
                 
-                array?.append(dict)
+                array!.append(dict)
             }
         }
         
