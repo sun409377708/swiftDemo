@@ -43,18 +43,6 @@ class JQHomeViewModel: NSObject {
             "since_id" : "\(since_id)"
         ]
         
-        //        var parameter = ["access_token" : JQUserAccountViewModel.sharedModel.userAccount?.access_token ?? ""]
-
-        
-//        if isPullup {
-//            //添加参数
-//            let id = viewmodelArray.last?.status?.id ?? 0 //获取最后一条数据
-//            parameter["max_id"] = "\(id - 1)"
-//        }else {
-//            let id = viewmodelArray.first?.status?.id ?? 0 //获取第一条数据
-//            parameter["since_id"] = "\(id)"
-//        }
-        
         JQNetworkTools.sharedTools.request(method: .GET, urlString: urlString, parameter: parameters) { (responseObject, error) in
             
             if error != nil {
@@ -68,6 +56,14 @@ class JQHomeViewModel: NSObject {
                 finished(false, 0)
                 return
             }
+            
+            //存入数据库缓存
+            JQHomeStatusDAL.cacheStatus(array: array)
+            
+            //执行数据库代码, 检索当前微博
+            let result = JQHomeStatusDAL.checkCacheStatus()
+            
+            print(result)
             
             //MVVM模式
             var tempArrM = [JQStatusViewModel]()

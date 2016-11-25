@@ -35,7 +35,7 @@ class JQMainNavController: UINavigationController, UIGestureRecognizerDelegate {
         if childViewControllers.count > 0 {
             
             viewController.hidesBottomBarWhenPushed = true
-            //设置返回按钮
+            //设置返回按钮 - 自定义返回按钮, 会导致侧滑手势失效
             viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", imageName: "navigationbar_back_withtext", target: self, action: #selector(back))
         }
         

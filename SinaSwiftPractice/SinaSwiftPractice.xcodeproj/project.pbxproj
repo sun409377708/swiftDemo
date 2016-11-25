@@ -60,6 +60,8 @@
 		775A72671DDAA9BF007B8626 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A72631DDAA9BF007B8626 /* UIColor+Extension.swift */; };
 		775A72691DDAC430007B8626 /* JQUserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A72681DDAC430007B8626 /* JQUserAccountViewModel.swift */; };
 		775A726B1DDAFB77007B8626 /* JQWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775A726A1DDAFB77007B8626 /* JQWelcomeController.swift */; };
+		778C1AD51DE7EC2900B5F371 /* JQSQLiteTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778C1AD41DE7EC2900B5F371 /* JQSQLiteTools.swift */; };
+		778C1AD71DE8096600B5F371 /* JQHomeStatusDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778C1AD61DE8096600B5F371 /* JQHomeStatusDAL.swift */; };
 		77CA30851DDC0F2C003E13FC /* JQStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA30841DDC0F2C003E13FC /* JQStatus.swift */; };
 		77CA30871DDC3483003E13FC /* JQStatusPictureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA30861DDC3483003E13FC /* JQStatusPictureInfo.swift */; };
 		77CA30891DDC34C3003E13FC /* JQUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA30881DDC34C3003E13FC /* JQUser.swift */; };
@@ -133,6 +135,8 @@
 		775A72631DDAA9BF007B8626 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		775A72681DDAC430007B8626 /* JQUserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JQUserAccountViewModel.swift; path = ../Model/JQUserAccountViewModel.swift; sourceTree = "<group>"; };
 		775A726A1DDAFB77007B8626 /* JQWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQWelcomeController.swift; sourceTree = "<group>"; };
+		778C1AD41DE7EC2900B5F371 /* JQSQLiteTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQSQLiteTools.swift; sourceTree = "<group>"; };
+		778C1AD61DE8096600B5F371 /* JQHomeStatusDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQHomeStatusDAL.swift; sourceTree = "<group>"; };
 		77CA30841DDC0F2C003E13FC /* JQStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQStatus.swift; sourceTree = "<group>"; };
 		77CA30861DDC3483003E13FC /* JQStatusPictureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQStatusPictureInfo.swift; sourceTree = "<group>"; };
 		77CA30881DDC34C3003E13FC /* JQUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQUser.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 		77222D861DD40C3600B29165 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				778C1AD31DE7EC1E00B5F371 /* SQLite */,
 				7741BDCD1DE68486008201FC /* EmoticonKeyboard(完整版) */,
 				7741BDDA1DE68486008201FC /* NSStringEmoji */,
 				77464CC91DE204BC0064DA2D /* UIImage+Effects */,
@@ -411,6 +416,7 @@
 				775A72681DDAC430007B8626 /* JQUserAccountViewModel.swift */,
 				77CA308A1DDC3592003E13FC /* JQHomeViewModel.swift */,
 				77CA308C1DDC3833003E13FC /* JQStatusViewModel.swift */,
+				778C1AD61DE8096600B5F371 /* JQHomeStatusDAL.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -506,6 +512,14 @@
 				775A72541DDA1413007B8626 /* JQNetworkTools.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		778C1AD31DE7EC1E00B5F371 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				778C1AD41DE7EC2900B5F371 /* JQSQLiteTools.swift */,
+			);
+			path = SQLite;
 			sourceTree = "<group>";
 		};
 		E36C8EFA0B5ADCBBDBFC8EE0 /* Frameworks */ = {
@@ -648,6 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77439AC31DE44256005D716E /* JQEmotionKeyboardView.swift in Sources */,
+				778C1AD71DE8096600B5F371 /* JQHomeStatusDAL.swift in Sources */,
 				775A724A1DD9B7E0007B8626 /* JQOAuthController.swift in Sources */,
 				7741BDE71DE68486008201FC /* HMTextAttachment.swift in Sources */,
 				77464CD21DE294550064DA2D /* JQCompose.swift in Sources */,
@@ -664,6 +679,7 @@
 				775A72471DD9A61E007B8626 /* UIImage+Extension.swift in Sources */,
 				775A72661DDAA9BF007B8626 /* NSString+Extension.swift in Sources */,
 				775A72641DDAA9BF007B8626 /* Date+Extension.swift in Sources */,
+				778C1AD51DE7EC2900B5F371 /* JQSQLiteTools.swift in Sources */,
 				775A71671DD81154007B8626 /* UIButton+Extension.swift in Sources */,
 				77222DB61DD424EA00B29165 /* JQDiscoverController.swift in Sources */,
 				770010811DD6B3D9004281C9 /* UIView+Extension.swift in Sources */,

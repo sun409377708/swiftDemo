@@ -13,27 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    lazy var pictureVC: JQPictureController = {
-        
-        let layout = UICollectionViewFlowLayout()
-        
-        layout.itemSize = CGSize(width: itemW, height: itemW)
-        
-        layout.minimumLineSpacing = selectCellMargin
-        layout.minimumInteritemSpacing = selectCellMargin
-        
-        layout.sectionInset = UIEdgeInsets(top: selectCellMargin, left: selectCellMargin, bottom: 0, right: selectCellMargin)
-        
-        let vc = JQPictureController(collectionViewLayout: layout)
-        
-        vc.collectionView?.backgroundColor = UIColor.orange
-        return vc
-    }()
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        JQSQLiteTools.shared
         registerNotification()
         
         window = UIWindow(frame: UIScreen.main.bounds)
