@@ -39,65 +39,18 @@ class JQHomeViewModel: NSObject {
         }
         
         print("\(max_id)--\(since_id)")
-
         
-//        //通过数据库访问层, 获取数据
-//        JQHomeStatusDAL.loadHomeData(since_id: since_id, max_id: max_id) { (array) in
-//            
-//            if array == nil {
-//                finished(false, 0)
-//                return
-//            }
-//            
-//            //MVVM模式
-//            var tempArrM = [JQStatusViewModel]()
-//            for item in array! {
-//                let viewModel = JQStatusViewModel()
-//                
-//                let s = JQStatus()
-//                
-//                s.yy_modelSet(with: item)
-//                
-//                viewModel.status = s
-//                tempArrM.append(viewModel)
-//            }
-//            
-//            
-//            if isPullup {
-//                self.viewmodelArray = self.viewmodelArray + tempArrM
-//            }else {
-//                self.viewmodelArray = tempArrM + self.viewmodelArray
-//            }
-//            
-//            self.cacheSingleImage(array: tempArrM, finished: finished)
-//        }
-        
-        
-        JQNetworkTools.sharedTools.request(method: .GET, urlString: urlString, parameter: parameters) { (responseObject, error) in
+        //通过数据库访问层, 获取数据
+        JQHomeStatusDAL.loadHomeData(sinceId: since_id, maxId: max_id) { (array) in
             
-            if error != nil {
+            if array == nil {
                 finished(false, 0)
                 return
             }
-            
-            let dict = responseObject as! [String : Any]
-            
-            guard let array = dict["statuses"] as? [[String : Any]] else {
-                finished(false, 0)
-                return
-            }
-            
-            //存入数据库缓存
-//            JQHomeStatusDAL.cacheStatus(array: array)
-//            
-//            //执行数据库代码, 检索当前微博
-//            let result = JQHomeStatusDAL.checkCacheStatus(since_id: since_id, max_id: max_id)
-//            
-//            print(result)
             
             //MVVM模式
             var tempArrM = [JQStatusViewModel]()
-            for item in array {
+            for item in array! {
                 let viewModel = JQStatusViewModel()
                 
                 let s = JQStatus()
@@ -115,11 +68,59 @@ class JQHomeViewModel: NSObject {
                 self.viewmodelArray = tempArrM + self.viewmodelArray
             }
             
-//            finished(true, tempArrM.count)
             self.cacheSingleImage(array: tempArrM, finished: finished)
             
-            
+//            finished(true, tempArrM.count)
+
         }
+        
+//        JQNetworkTools.sharedTools.request(method: .GET, urlString: urlString, parameter: parameters) { (responseObject, error) in
+//            
+//            if error != nil {
+//                finished(false, 0)
+//                return
+//            }
+//            
+//            let dict = responseObject as! [String : Any]
+//            
+//            guard let array = dict["statuses"] as? [[String : Any]] else {
+//                finished(false, 0)
+//                return
+//            }
+//            
+//            //存入数据库缓存
+////            JQHomeStatusDAL.cacheStatus(array: array)
+////            
+////            //执行数据库代码, 检索当前微博
+////            let result = JQHomeStatusDAL.checkCacheStatus(since_id: since_id, max_id: max_id)
+////            
+////            print(result)
+//            
+//            //MVVM模式
+//            var tempArrM = [JQStatusViewModel]()
+//            for item in array {
+//                let viewModel = JQStatusViewModel()
+//                
+//                let s = JQStatus()
+//                
+//                s.yy_modelSet(with: item)
+//                
+//                viewModel.status = s
+//                tempArrM.append(viewModel)
+//            }
+//            
+//            
+//            if isPullup {
+//                self.viewmodelArray = self.viewmodelArray + tempArrM
+//            }else {
+//                self.viewmodelArray = tempArrM + self.viewmodelArray
+//            }
+//            
+////            finished(true, tempArrM.count)
+//            self.cacheSingleImage(array: tempArrM, finished: finished)
+        
+            
+//        }
  
        
         
